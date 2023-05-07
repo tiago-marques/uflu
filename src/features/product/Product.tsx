@@ -3,7 +3,7 @@ import './Product.css'
 export function Product (props: { name: string }) {
     return (
         <div className='flex flex-wrap lg:w-1/2 min-w-min md:p-6 font-mono overflow-x-hidden'>
-            <div className='flex-none w-48 mb-10 relative z-10 before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-teal-400'>
+            <div className='flex-none w-32 mb-10 relative z-10 before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-teal-400'>
                 <img
                     src='https://tailwindcss.com/_next/static/media/retro-shoe.24e25785.jpg'
                     alt=''
@@ -34,12 +34,6 @@ export function Product (props: { name: string }) {
                             type='submit'
                         >
                             Comprar
-                        </button>
-                        <button
-                            className='px-6 h-12 uppercase font-semibold tracking-wider border border-slate-200 text-slate-900'
-                            type='button'
-                        >
-                            +LISTA
                         </button>
                     </div>
                     <button

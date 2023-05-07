@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Product } from '../product/Product'
-import './ProductList.css'
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
 import { filterAsync, selectFilter } from './productListSlice'
+
+import './ProductList.css'
+
 export function ProductList () {
     const storeFilter = useAppSelector(selectFilter)
     const dispatch = useAppDispatch()
