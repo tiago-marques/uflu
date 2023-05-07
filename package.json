@@ -2,6 +2,7 @@
     "name": "ufluvite",
     "private": true,
     "version": "0.0.0",
+    "homepage": "https://uflu.shop",
     "type": "module",
     "scripts": {
         "predeploy": "npm run build && cp -r dist build",
