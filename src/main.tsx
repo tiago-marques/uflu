@@ -36,7 +36,7 @@ const router = createBrowserRouter([
                     {
                         path: 'admin',
                         element: (
-                            <div className='flex flex-1 max-w-screen-lg'>
+                            <div className='flex flex-auto pl-6'>
                                 <h1>Merchant Admin</h1>
                             </div>
                         ),
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
                     {
                         path: 'shop/:item',
                         element: (
-                            <div className='flex flex-1 max-w-screen-lg'>
+                            <div className='flex flex-auto pl-6'>
                                 <h1>Product</h1>
                             </div>
                         ),
