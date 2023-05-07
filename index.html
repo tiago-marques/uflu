@@ -17,10 +17,26 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
-
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                    .register('serviceWorker.js')
+                    .then(function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        )
+                    })
+                    .catch(function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err)
+                    })
+            }
+        </script>
         <title>UFLU</title>
-      <script type="module" crossorigin src="/assets/index-d64973f9.js"></script>
-      <link rel="stylesheet" href="/assets/index-2c93c59d.css">
+      <script type="module" crossorigin src="/assets/index-5cb3a202.js"></script>
+      <link rel="stylesheet" href="/assets/index-b7cd463b.css">
     </head>
 
     <body>
