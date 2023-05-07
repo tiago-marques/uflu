@@ -1,28 +1,29 @@
 {
-    "short_name": "React App",
-    "name": "Create React App Sample",
+    "short_name": "uflu",
+    "name": "UFLU",
     "icons": [
         {
-            "src": "logo.svg",
+            "src": "logo64.svg",
             "sizes": "64x64 32x32 24x24 16x16",
             "type": "image/svg+xml",
             "purpose": "any"
         },
         {
-            "src": "logo.svg",
+            "src": "logo192.svg",
             "type": "image/svg+xml",
             "purpose": "any",
             "sizes": "192x192"
         },
         {
-            "src": "logo.svg",
+            "src": "logo512.svg",
             "type": "image/svg+xml",
             "purpose": "any",
             "sizes": "512x512"
         }
     ],
-    "start_url": "?mobile=true",
+    "start_url": "/?mobile=true",
     "display": "standalone",
     "theme_color": "#66c6ba",
-    "background_color": "#ffffff"
+    "background_color": "#ffffff",
+    "orientation": "portrait"
 }

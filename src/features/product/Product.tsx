@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Product.css'
 
 export function Product (props: { name: string }) {
@@ -29,12 +30,14 @@ export function Product (props: { name: string }) {
                 </div>
                 <div className='flex space-x-2 mb-4 text-sm font-medium'>
                     <div className='flex space-x-4'>
-                        <button
-                            className='px-6 h-12 uppercase font-semibold tracking-wider border-2 border-black bg-teal-400 text-black'
-                            type='submit'
-                        >
-                            Comprar
-                        </button>
+                        <Link to={`shop/${props.name}`}>
+                            <button
+                                className='px-6 h-12 uppercase font-semibold tracking-wider border-2 border-black bg-teal-400 text-black'
+                                type='submit'
+                            >
+                                Comprar
+                            </button>
+                        </Link>
                     </div>
                     <button
                         className='flex-none flex items-center justify-center w-12 h-12 text-black'

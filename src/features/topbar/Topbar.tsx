@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import full from '../../assets/full.svg'
 import './Topbar.css'
 
@@ -42,12 +43,12 @@ export function Topbar () {
                 </div>
                 <div className='hidden lg:flex lg:gap-x-12'></div>
                 <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-                    <a
-                        href='#'
+                    <Link
+                        to='/@surfistaperdido'
                         className='text-sm font-semibold leading-6 text-gray-900'
                     >
                         Log in <span aria-hidden='true'>&rarr;</span>
-                    </a>
+                    </Link>
                 </div>
             </nav>
         </header>
