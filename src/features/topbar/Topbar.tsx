@@ -10,14 +10,14 @@ export function Topbar () {
                 aria-label='Global'
             >
                 <div className='flex lg:flex-1'>
-                    <a href='#' className='-m-1.5 p-1.5'>
+                    <Link to='/' className='-m-1.5 p-1.5'>
                         <span className='sr-only'>Uflu</span>
                         <img
                             className='h-16 w-auto App-logo'
                             src={full}
                             alt=''
                         />
-                    </a>
+                    </Link>
                 </div>
                 <div className='flex lg:hidden'>
                     <Link
