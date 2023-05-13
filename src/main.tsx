@@ -10,6 +10,7 @@ import App from './App'
 import { Topbar } from './features/topbar/Topbar'
 import User from './routes/User'
 import { ProductList } from './features/productList/ProductList'
+import { Landing } from './features/landing/Landing'
 
 const router = createBrowserRouter([
     {
@@ -19,11 +20,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '',
-                element: (
-                    <center>
-                        <h1>Landing Page</h1>
-                    </center>
-                ),
+                element: <Landing />,
             },
             {
                 path: ':user',

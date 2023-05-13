@@ -26,7 +26,7 @@ export function ProductList () {
                     onChange={e => setFilter(e.target.value)}
                 />
             </div>
-            <div className='container mx-auto h-full md:m-4 p-4 bg-white rounded-xl'>
+            <div className='container mx-auto md:m-4 p-4 bg-white rounded-xl'>
                 <div className='flex flex-wrap p-6 font-mono w-full'>
                     {['hello', 'world', 'xuxa', 'pele']
                         .filter(
