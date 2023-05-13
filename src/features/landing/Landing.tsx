@@ -741,45 +741,6 @@ export function Landing () {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex flex-col -mb-6 w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10'>
-                            <div className='flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow'>
-                                <div className='w-full p-8 text-3xl font-bold text-center'>
-                                    Plano Premium <br />
-                                    <span className='text-amber-500'>
-                                        ✰ ✰ ✰
-                                    </span>
-                                </div>
-                                <div className='h-1 w-full gradient my-0 py-0 rounded-t'></div>
-                                <ul className='w-full text-center text-base font-bold'>
-                                    <li className='border-b py-4'>
-                                        Loja Online
-                                    </li>
-                                    <li className='border-b py-4'>
-                                        Relátorios financeiros
-                                    </li>
-                                    <li className='border-b py-4'>
-                                        Produtos ilimitados
-                                    </li>
-                                    <li className='border-b py-4'>
-                                        Links ilimitados
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6'>
-                                <div className='w-full pt-6 text-4xl font-bold text-center'>
-                                    R$0,00
-                                </div>
-                                <div className='flex items-center justify-center'>
-                                    <button
-                                        className='mx-auto lg:mx-0 hover:underline gradient font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out
-hover:scale-105 duration-300 ease-in-out
-hover:scale-105 duration-300 ease-in-out'
-                                    >
-                                        Gratuito
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
                         <div className='flex flex-col text-slate-400 w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4'>
                             <div className='flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow'>
                                 <div className='p-8 text-3xl font-bold text-center border-b-4'>
@@ -816,6 +777,45 @@ hover:scale-105 duration-300 ease-in-out'
                                         className='mx-auto line-through lg:mx-0 gradient font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition '
                                     >
                                         Comprar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flex flex-col -mb-6 w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10'>
+                            <div className='flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow'>
+                                <div className='w-full p-8 text-3xl font-bold text-center'>
+                                    Plano Premium <br />
+                                    <span className='text-amber-500'>
+                                        ✰ ✰ ✰
+                                    </span>
+                                </div>
+                                <div className='h-1 w-full gradient my-0 py-0 rounded-t'></div>
+                                <ul className='w-full text-center text-base font-bold'>
+                                    <li className='border-b py-4'>
+                                        Loja Online
+                                    </li>
+                                    <li className='border-b py-4'>
+                                        Relátorios financeiros
+                                    </li>
+                                    <li className='border-b py-4'>
+                                        Produtos ilimitados
+                                    </li>
+                                    <li className='border-b py-4'>
+                                        Links ilimitados
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className='flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6'>
+                                <div className='w-full pt-6 text-4xl font-bold text-center'>
+                                    R$0,00
+                                </div>
+                                <div className='flex items-center justify-center'>
+                                    <button
+                                        className='mx-auto lg:mx-0 hover:underline gradient font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out
+hover:scale-105 duration-300 ease-in-out
+hover:scale-105 duration-300 ease-in-out'
+                                    >
+                                        Gratuito
                                     </button>
                                 </div>
                             </div>
