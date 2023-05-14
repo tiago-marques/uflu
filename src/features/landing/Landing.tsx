@@ -1,18 +1,24 @@
-import hero from '../../assets/landing.svg'
+import hero from '../../assets/landing-opaque.svg'
 import links from '../../assets/links.svg'
 import dropshipping from '../../assets/dropshipping.svg'
 import worldmedias from '../../assets/worldmedias.svg'
 import full from '../../assets/full.svg'
-import './Landing.css'
+
 import { Link } from 'react-router-dom'
 
+import './Landing.scss'
+import { useEffect, useRef, useState } from 'react'
+
 export function Landing () {
+    const itemEls = useRef({} as any)
+    const [selected, setSelected] = useState('')
+
     return (
         <>
             <div className='container px-3 mx-auto flex flex-wrap md:flex-row items-center'>
                 <div className='flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left'>
                     <h1 className='my-4 text-5xl font-bold leading-tight'>
-                        A Loja Online das suas redes sociais chegou!
+                        A Loja Online da sua rede social chegou!
                     </h1>
                     <p className='leading-normal text-2xl mb-8'>
                         Venda produtos insta-fácil e insta-rápido para{' '}
@@ -43,14 +49,14 @@ export function Landing () {
                 >
                     <g
                         stroke='none'
-                        stroke-width='1'
+                        strokeWidth='1'
                         fill='none'
-                        fill-rule='evenodd'
+                        fillRule='evenodd'
                     >
                         <g
                             transform='translate(-2.000000, 44.000000)'
                             fill='#FFFFFF'
-                            fill-rule='nonzero'
+                            fillRule='nonzero'
                         >
                             <path
                                 d='M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496'
@@ -69,7 +75,7 @@ export function Landing () {
                         <g
                             transform='translate(-4.000000, 76.000000)'
                             fill='#FFFFFF'
-                            fill-rule='nonzero'
+                            fillRule='nonzero'
                         >
                             <path d='M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z'></path>
                         </g>
@@ -79,8 +85,8 @@ export function Landing () {
             <section className='bg-white border-b py-8'>
                 <div className='container max-w-5xl mx-auto m-8'>
                     <h2 className='w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800'>
-                        A plataforma onde transforma sua renda de influencer
-                        como renda principal
+                        Crie sua Loja Online e comece a vender através da sua
+                        rede social
                     </h2>
                     <div className='w-full mb-4'>
                         <div className='h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t'></div>
@@ -88,16 +94,16 @@ export function Landing () {
                     <div className='flex flex-wrap'>
                         <div className='w-5/6 sm:w-1/2 p-6'>
                             <h3 className='text-3xl text-gray-800 font-bold leading-none mb-3'>
-                                O melhor Dropshipping
+                                Universo Dropshipping
                             </h3>
                             <p className='text-gray-600 mb-8'>
+                                Cuidamos de tudo para que você mantenha o foco
+                                somente nas vendas.
+                                <br />
+                                <br />
                                 Sem necessidade de estoque ou logistica de
                                 entregas. Comece agora mesmo com{' '}
-                                <b>Shein, Amazon e AliExpress</b>. Cuidamos de
-                                todo o resto para que você foque somente nas
-                                suas vendas
-                                <br />
-                                <br />
+                                <b>Shein*, Amazon e AliExpress</b>.
                             </p>
                         </div>
                         <div className='w-full sm:w-1/2 p-6'>
@@ -125,8 +131,8 @@ export function Landing () {
                                     d='M119.9,721.42c-3-5.51.4-12.27,4.29-17.18s8.61-10,8.51-16.29c-.15-9-9.7-14.31-17.33-19.09a84,84,0,0,1-15.56-12.51A22.8,22.8,0,0,1,95,650c-1.58-3.52-1.54-7.52-1.44-11.37q.51-19.26,1.91-38.49'
                                     fill='none'
                                     stroke='#3f3d56'
-                                    stroke-miterlimit='10'
-                                    stroke-width='4'
+                                    strokeMiterlimit='10'
+                                    strokeWidth='4'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
@@ -188,7 +194,7 @@ export function Landing () {
                                 />
                                 <path
                                     d='m172 133.75h268v434h-247.58a20.42 20.42 0 0 1 -20.42 -20.42v-413.58z'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
@@ -199,68 +205,68 @@ export function Landing () {
                                     cx='193'
                                     cy='127.75'
                                     r='6'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                 />
                                 <circle
                                     cx='208'
                                     cy='127.75'
                                     r='6'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                 />
                                 <circle
                                     cx='223'
                                     cy='127.75'
                                     r='6'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
                                     d='M387.5,490A66.5,66.5,0,1,1,321,423.5,66.47,66.47,0,0,1,387.5,490Z'
                                     fill='none'
                                     stroke='#f2f2f2'
-                                    stroke-miterlimit='10'
-                                    stroke-width='2'
+                                    strokeMiterlimit='10'
+                                    strokeWidth='2'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
                                     d='M325.38,467.23l8.3,13,35.53,55.59a66.5,66.5,0,0,1-103.32-8.57l43.54-84.94.91,1.43'
                                     fill='none'
                                     stroke='#f2f2f2'
-                                    stroke-linecap='round'
-                                    stroke-linejoin='round'
-                                    stroke-width='2'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth='2'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
                                     d='M385.31,507a66.46,66.46,0,0,1-16.1,28.82l-35.53-55.59,15.69-24.78a.66.66,0,0,1,1.1,0C353.76,460.32,371,486,385.31,507Z'
                                     fill='none'
                                     stroke='#f2f2f2'
-                                    stroke-miterlimit='10'
-                                    stroke-width='2'
+                                    strokeMiterlimit='10'
+                                    strokeWidth='2'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
                                     d='M337.5,452.5a15,15,0,0,1-12.12,14.73l-15-23.51a15,15,0,0,1,27.16,8.78Z'
                                     fill='none'
                                     stroke='#f2f2f2'
-                                    stroke-miterlimit='10'
-                                    stroke-width='2'
+                                    strokeMiterlimit='10'
+                                    strokeWidth='2'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
                                     d='m347.5 481.5'
                                     fill='none'
                                     stroke='#f2f2f2'
-                                    stroke-miterlimit='10'
-                                    stroke-width='2'
+                                    strokeMiterlimit='10'
+                                    strokeWidth='2'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
                                     d='m333.5 480.5'
                                     fill='none'
                                     stroke='#f2f2f2'
-                                    stroke-miterlimit='10'
-                                    stroke-width='2'
+                                    strokeMiterlimit='10'
+                                    strokeWidth='2'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
@@ -283,7 +289,7 @@ export function Landing () {
                                     width='347'
                                     height='11'
                                     rx='1.24'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                     opacity='.3'
                                 />
                                 <rect
@@ -292,7 +298,7 @@ export function Landing () {
                                     width='347'
                                     height='11'
                                     rx='1.24'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                     opacity='.3'
                                 />
                                 <rect
@@ -301,7 +307,7 @@ export function Landing () {
                                     width='73'
                                     height='25'
                                     rx='1.24'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                 />
                                 <rect
                                     x='878'
@@ -309,7 +315,7 @@ export function Landing () {
                                     width='73'
                                     height='25'
                                     rx='1.24'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
@@ -319,7 +325,7 @@ export function Landing () {
                                 <path
                                     transform='translate(-11.5 -150.75)'
                                     d='m1016.3 605.22s-22.5 8-34.74 4.56l5.69 11.39s29.05-0.86 34.18-6-5.13-9.95-5.13-9.95z'
-                                    fill='#ff6584'
+                                    fill='#66C6BA'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
@@ -380,12 +386,12 @@ export function Landing () {
                                 <path
                                     transform='translate(-11.5 -150.75)'
                                     d='m990.71 553.1s20.5-12.81 37.59 0 28.48 71.2 28.48 71.2l-39.59-8.83s-1.7-6.83-4-8-2.57-6-2.57-6-12.24-3.7-11.39-17.94-8.52-30.43-8.52-30.43z'
-                                    fill='#ff6584'
+                                    fill='#66C6BA'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
                                     d='m1001.2 553.67h-10.54s-6.27 7.12-7.12 25.06l-3.42 14.27s-7.12 17.09-2.85 19.94 12.54 2.56 14.24-3.13 13.44-38.76 13.44-38.76z'
-                                    fill='#ff6584'
+                                    fill='#66C6BA'
                                 />
                                 <path
                                     transform='translate(-11.5 -150.75)'
@@ -534,66 +540,229 @@ export function Landing () {
                                     d='m1002.9 620.79s-273.2-156.82-390.82-127.11c0 0-249.27 26.825-278.15 85.84 0 0-79.237-247.61-108.12-255.87'
                                     fill='none'
                                     opacity='.8'
-                                    stroke='#ff6347'
-                                    stroke-miterlimit='10'
-                                    stroke-width='2'
+                                    stroke='#66C6BA'
+                                    strokeMiterlimit='10'
+                                    strokeWidth='2'
                                 />
                                 <path
                                     transform='translate(-11.697 -13.011)'
                                     d='m333.9 579.53c45.809-122.16 458.5-257.52 458.5-257.52-58.602 14.857-180.35 171.68-180.35 171.68s-257.52-187.36-386.28-170.03c0 0 567.04 18.571 777.1 297.14'
                                     fill='none'
                                     opacity='.8'
-                                    stroke='#ff6347'
-                                    stroke-miterlimit='10'
-                                    stroke-width='2'
+                                    stroke='#66C6BA'
+                                    strokeMiterlimit='10'
+                                    strokeWidth='2'
                                 />
                                 <circle
                                     cx='214.07'
                                     cy='310.65'
                                     r='11.968'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                 />
                                 <circle
                                     cx='322.2'
                                     cy='566.52'
                                     r='11.968'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                 />
                                 <circle
                                     cx='780.7'
                                     cy='309'
                                     r='11.968'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                 />
                                 <circle
                                     cx='991.17'
                                     cy='607.78'
                                     r='11.968'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                 />
                                 <circle
                                     cx='600.35'
                                     cy='480.68'
                                     r='11.968'
-                                    fill='#ff6347'
+                                    fill='#66C6BA'
                                 />
                             </svg>
                         </div>
                         <div className='w-full sm:w-1/2 p-6 mt-6'>
                             <div className='align-middle'>
                                 <h3 className='text-3xl text-gray-800 font-bold leading-none mb-3'>
-                                    Qualquer lugar do mundo
+                                    Em qualquer lugar do mundo
                                 </h3>
                                 <p className='text-gray-600 mb-8'>
-                                    Fazemos de tudo para te ajudar, não importa
-                                    aonde você precisa vender. Estamos
-                                    preparados para que você aceite mais de{' '}
-                                    <b>100 meios de pagamento</b> em mais de{' '}
-                                    <b>39 países</b>!
+                                    Facilitamos para você toda a parte
+                                    burocrática, importe-se em divulgar seus
+                                    produtos. <br />
+                                    <br />
+                                    Estamos preparados para que sua loja aceite{' '}
+                                    <b>+100 métodos de pagamento</b> em{' '}
+                                    <b>+15 países</b>!
                                     <br />
                                     <br />
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                    <div className='flex flex-wrap'>
+                        <div className='w-5/6 sm:w-1/2 p-6'>
+                            <h3 className='text-3xl text-gray-800 font-bold leading-none mt-3'>
+                                Uma Loja Online por links.
+                            </h3>
+                            <p className='text-gray-600 mb-8'>
+                                Cuidamos de tudo para que você mantenha o foco
+                                somente nas vendas.
+                                <br />
+                                <br />
+                                Sem necessidade de estoque ou logistica de
+                                entregas. Comece agora mesmo com{' '}
+                                <b>Shein*, Amazon e AliExpress</b>.
+                            </p>
+                        </div>
+                        <div className='w-full sm:w-1/2 p-6'>
+                            <svg
+                                viewBox='0 0 568.95706 478.05046'
+                                className='w-5/6 sm:h-64 mx-auto'
+                                xmlns='http://www.w3.org/2000/svg'
+                            >
+                                <title>browsing</title>
+                                <desc>Images from: undraw.co</desc>
+                                <path
+                                    d='M702.50021,241.97477h-205a15.5,15.5,0,0,1,0-31h205a15.5,15.5,0,0,1,0,31Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#66C6BA'
+                                />
+                                <path
+                                    d='M882.07006,266.7604H317.92994a2.46274,2.46274,0,0,1,0-4.92428H882.07006a2.46274,2.46274,0,0,1,0,4.92428Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#e6e6e6'
+                                />
+                                <ellipse
+                                    cx='30.5814'
+                                    cy='15.64507'
+                                    rx='8.45661'
+                                    ry='8.64507'
+                                    fill='#3f3d56'
+                                />
+                                <ellipse
+                                    cx='59.79515'
+                                    cy='15.64507'
+                                    rx='8.45661'
+                                    ry='8.64507'
+                                    fill='#3f3d56'
+                                />
+                                <ellipse
+                                    cx='89.00891'
+                                    cy='15.64507'
+                                    rx='8.45661'
+                                    ry='8.64507'
+                                    fill='#66C6BA'
+                                />
+                                <path
+                                    d='M437.8418,233.45264a.99674.99674,0,0,1-.71485-.30078l-5.70605-5.833a.99954.99954,0,0,1,0-1.39844l5.70605-5.83252a1,1,0,0,1,1.42969,1.39844l-5.022,5.1333,5.022,5.13379a1,1,0,0,1-.71484,1.69922Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#3f3d56'
+                                />
+                                <path
+                                    d='M447.43018,233.45264a1,1,0,0,1-.71485-1.69922l5.02149-5.13379-5.02149-5.1333a1,1,0,0,1,1.42969-1.39844l5.70557,5.83252a.99954.99954,0,0,1,0,1.39844l-5.70557,5.833A.99674.99674,0,0,1,447.43018,233.45264Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#e6e6e6'
+                                />
+                                <path
+                                    d='M823.32882,218.97477a2.19558,2.19558,0,0,0-2.19287,2.19287V231.7819a2.19557,2.19557,0,0,0,2.19287,2.19287h10.61426a2.19557,2.19557,0,0,0,2.19287-2.19287V221.16764a2.19558,2.19558,0,0,0-2.19287-2.19287Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#e6e6e6'
+                                />
+                                <path
+                                    d='M797.32882,218.97477a2.19558,2.19558,0,0,0-2.19287,2.19287V231.7819a2.19557,2.19557,0,0,0,2.19287,2.19287h10.61426a2.19557,2.19557,0,0,0,2.19287-2.19287V221.16764a2.19558,2.19558,0,0,0-2.19287-2.19287Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#e6e6e6'
+                                />
+                                <path
+                                    d='M847.82882,219.47477a2.19558,2.19558,0,0,0-2.19287,2.19287V232.2819a2.19557,2.19557,0,0,0,2.19287,2.19287h10.61426a2.19557,2.19557,0,0,0,2.19287-2.19287V221.66764a2.19558,2.19558,0,0,0-2.19287-2.19287Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#66C6BA'
+                                />
+                                <path
+                                    d='M726.5,443.97477h-253a23.02588,23.02588,0,0,1-23-23v-94a23.02619,23.02619,0,0,1,23-23h253a23.02619,23.02619,0,0,1,23,23v94A23.02588,23.02588,0,0,1,726.5,443.97477Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#f2f2f2'
+                                />
+                                <path
+                                    d='M588.44626,228.85854h-84.8096a2.67117,2.67117,0,0,1,0-5.34234h84.8096a2.67117,2.67117,0,0,1,0,5.34234Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#fff'
+                                />
+                                <path
+                                    d='M499.30377,689.02523l-.65358-.24266a80.52865,80.52865,0,0,1-47.43556-48.31349,78.13194,78.13194,0,0,1-4.05945-19.17338l-.05334-.62391.616.11026c7.35356,1.31976,15.07319,2.049,18.5127,2.33433l-19.29642-12.76855.03484-.66341a15.27247,15.27247,0,0,1,10.26116-13.69775,15.5341,15.5341,0,0,1,16.90367,4.1538c1.91842,2.0821,3.94658,4.17807,5.90767,6.2054,6.73966,6.96549,13.70882,14.168,18.11551,22.6709a48.67526,48.67526,0,0,1,.979,41.89049Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#f2f2f2'
+                                />
+                                <path
+                                    d='M804.06213,687.27923l-389.72564.30734a1.19069,1.19069,0,1,1,0-2.38137l389.72564-.30734a1.19069,1.19069,0,1,1,0,2.38137Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#66C6BA'
+                                />
+                                <path
+                                    d='M720.92381,395.12213l-4.04155-62.60946a10.12679,10.12679,0,0,0-10.62635-9.431h0a10.12681,10.12681,0,0,0-9.54882,11.17142l6.192,64.90719,2.09992,39.59864a8.83708,8.83708,0,1,0,11.00561,2.74Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#a0616a'
+                                />
+                                <path
+                                    d='M723.45883,344.89929h0a2.9862,2.9862,0,0,0,.32716-3.605,3.87383,3.87383,0,0,1-.54287-2.3,3.5605,3.5605,0,0,1,.07234-.462,5.8426,5.8426,0,0,0-1.25965-5.25318c-2.065-2.30613-3.15-5.87079-3.67913-9.06425-.579-3.4945-.97734-7.07287-2.376-10.32721-2.01771-4.69437-6.58245-8.77842-12.531-6.531a11.761,11.761,0,0,0-5.933,5.18648c-2.83046,4.89669-2.65444,10.68774-2.43306,16.22628l-1.15879-2.14995a44.96664,44.96664,0,0,1-2.57911,17.79578c1.33295-.30877,2.34733,1.46032,1.96,2.77253-.38736,1.31227-1.55555,2.20754-2.55074,3.14648-1.2544,1.18352-2.41626,2.91612-1.13842,4.60964a3.68181,3.68181,0,0,0,2.61091,1.373,69.58163,69.58163,0,0,0,28.29807-3.20573c2.02312-.66929,4.18516-1.57536,5.18288-3.4583S725.58713,344.793,723.45883,344.89929Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#66C6BA'
+                                />
+                                <polygon
+                                    points='337.213 453.245 326.176 453.245 320.923 410.671 337.214 410.671 337.213 453.245'
+                                    fill='#a0616a'
+                                />
+                                <path
+                                    d='M658.56065,683.34341h-7.91553l-1.41289-7.4732-3.61862,7.4732H624.61973a4.71924,4.71924,0,0,1-2.68163-8.60273l16.7651-11.57857V655.607l17.63395,1.05251Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#2f2e41'
+                                />
+                                <polygon
+                                    points='396.555 443.524 386.275 447.542 365.884 409.802 381.056 403.871 396.555 443.524'
+                                    fill='#a0616a'
+                                />
+                                <path
+                                    d='M724.46468,670.18948l-7.37238,2.88162-4.03653-6.446-.64971,8.27774-19.5533,7.64275a4.71923,4.71923,0,0,1-5.62941-7.03617L698.6229,658.622l-2.75043-7.03672,16.80709-5.4393Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#2f2e41'
+                                />
+                                <path
+                                    d='M705.136,388.97477H653.63989s-19.39271,138.49606-19.44833,138.748,10.94439,4.252,5.94439,9.252l-5,5c-4,4,2.9685,17.668,2.9685,17.668l-7.9685,81.332h32.91339l16.08661-168L657.374,553.51693l28.35246,87.45784,20.40945-12,4-11-7.94638-7.94637S700.136,598.085,700.136,591.02989s6-1.05512,0-7.05512c-2.59581-2.59581-9.90418-34.44792-9.90418-34.44792L714.136,472.97477l5.69535-34.1721a42.92852,42.92852,0,0,0-3.77026-25.87835C712.89416,406.42987,708.90412,397.92418,705.136,388.97477Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#2f2e41'
+                                />
+                                <path
+                                    d='M708.136,303.97477l-3.42234-10.267a12.08217,12.08217,0,0,0-10.71327-8.23823l-3.04083-.18885a12.08219,12.08219,0,0,0-12.29391,8.49639l0,0a12.036,12.036,0,0,1-10.44906,8.46888c-8.88815.75724-22.08058,3.44491-22.08058,12.7288,0,14,15,51,12,54s-10,15.36221-6,19c1.04218.94782.20187,5.50614-.13182,8.77142-.60432,5.91342,41.13182-7.16031,53.13182-3.77142s6-22,8-24a50.76884,50.76884,0,0,0,5.00066-7.31749,12.0449,12.0449,0,0,0,1.47512-3.84561l3.44424-17.43211c.05733-.29017.10326-.57443.13906-.868.455-3.73116,3.119-28.83565-7.05908-32.53675C705.136,302.97477,708.136,303.97477,708.136,303.97477Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#66C6BA'
+                                />
+                                <path
+                                    d='M593.39329,278.78526l45.60885,43.08262a10.12678,10.12678,0,0,0,14.20394-.3344l0,0a10.1268,10.1268,0,0,0-.61947-14.68321l-48.7484-43.29987L575.326,235.9911a8.83708,8.83708,0,1,0-9.92364,5.49116Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#a0616a'
+                                />
+                                <path
+                                    d='M625.74963,317.27977v0a2.98617,2.98617,0,0,0,2.21623,2.862,3.87391,3.87391,0,0,1,1.96422,1.314,3.56262,3.56262,0,0,1,.26175.3875,5.84263,5.84263,0,0,0,4.50069,2.98772c3.08269.28163,6.30529,2.15216,8.8681,4.12959,2.80434,2.16387,5.53359,4.51221,8.77444,5.94187,4.675,2.06223,10.79887,1.94257,13.62278-3.755a11.761,11.761,0,0,0,.81039-7.83855c-1.26351-5.51295-5.33728-9.63261-9.27225-13.53651l2.3129.78458a44.96666,44.96666,0,0,1-10.23449-14.785c-.7655,1.13408-2.71324.52994-3.32354-.69459-.61035-1.22457-.365-2.67577-.276-4.04109.11212-1.721-.21756-3.78084-2.3067-4.15017a3.68181,3.68181,0,0,0-2.84674.7734,69.58167,69.58167,0,0,0-18.533,21.62374c-1.02518,1.86816-1.99076,4.00428-1.43851,6.06242S624.2639,318.80736,625.74963,317.27977Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#66C6BA'
+                                />
+                                <circle
+                                    cx='375.61448'
+                                    cy='50'
+                                    r='22'
+                                    fill='#a0616a'
+                                />
+                                <path
+                                    d='M724.476,281.90476c-1.14-2.31-4.77-2.04-6.62006-.24-1.84,1.8-2.51,4.44-3.55,6.79-1.04,2.36-2.91,4.75-5.48,4.85-2.44.09-4.41-1.89-6.69-2.75-2.57-.97-5.39-.46-7.99.54-.06-.25-.12-.5-.2-.74a15.87526,15.87526,0,0,0-1.61-3.68,12.27211,12.27211,0,0,1-.6,3.76,11.45053,11.45053,0,0,1-.98,2.21c-2.49,1.26-4.95,2.61-7.69,3.06-3.32.56-7.29-.68-8.54-3.82-.92-2.32-.1-5.01995,1.3-7.11,1.4-2.08,3.32-3.75,4.89-5.7a17.655,17.655,0,0,0,4.07-13.25,13.23365,13.23365,0,0,0-6.86-9.91,28.03927,28.03927,0,0,1-5.98,1.44,15.87526,15.87526,0,0,0-1.61-3.68,12.27211,12.27211,0,0,1-.6,3.76,7.81393,7.81393,0,0,1-5.14-2.03c-3-2.84-2.72-7.8-1-11.56a19.79062,19.79062,0,0,1,31.49-6.21c3.29-4.3,9.89-4.98,14.79-2.66,4.89,2.33,8.29,6.97,10.7,11.82A51.78355,51.78355,0,0,1,724.476,281.90476Z'
+                                    transform='translate(-315.52147 -210.97477)'
+                                    fill='#2f2e41'
+                                />
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -613,16 +782,14 @@ export function Landing () {
                                 className='flex flex-wrap no-underline hover:no-underline'
                             >
                                 <p className='w-full text-gray-600 text-xs md:text-sm px-6'>
-                                    1.
+                                    1. Conecte sua rede social.
                                 </p>
                                 <div className='w-full font-bold text-xl text-gray-800 px-6'>
-                                    Conecte sua rede social.
-                                    <br />
-                                    Como preferir:
+                                    Controle pela sua rede social:
                                 </div>
                                 <p className='text-gray-800 text-base p-6 mb-5'>
-                                    Pode ser o perfil da sua loja, seu próprio
-                                    perfil ou um novo.
+                                    A sua Loja Online é atualizada{' '}
+                                    <b>automaticamente por sua rede social</b>.
                                 </p>
                             </a>
                         </div>
@@ -643,15 +810,15 @@ export function Landing () {
                                 className='flex flex-wrap no-underline hover:no-underline'
                             >
                                 <p className='w-full text-gray-600 text-xs md:text-sm px-6'>
-                                    2.
+                                    2. Cadastre os produtos.
                                 </p>
                                 <div className='w-full font-bold text-xl text-gray-800 px-6'>
-                                    Cadatre +1000 produtos.
-                                    <br />O melhor do Dropshipping:
+                                    Mais de +106 milhões produtos:
                                 </div>
                                 <p className='text-gray-800 text-base p-6 mb-5'>
                                     Comece agora cadastrando produtos dos
-                                    melhores: <b>Shein, Amazon e AliExpress</b>
+                                    melhores: <b>Shein*, Amazon e AliExpress</b>
+                                    .
                                 </p>
                             </a>
                         </div>
@@ -672,16 +839,14 @@ export function Landing () {
                                 className='flex flex-wrap no-underline hover:no-underline'
                             >
                                 <p className='w-full text-gray-600 text-xs md:text-sm px-6'>
-                                    3.
+                                    3. Venda através de links.
                                 </p>
                                 <div className='w-full font-bold text-xl text-gray-800 px-6'>
-                                    Venda através de links.
-                                    <br />
-                                    Arrasta para cima:
+                                    Envie o link ou Arraste para cima:
                                 </div>
                                 <p className='text-gray-800 text-base p-6 mb-5'>
-                                    Compartilhe diretamente da loja ou crie
-                                    conteudo para divulgação do link!
+                                    Compartilhe o link pelas redes sociais ou{' '}
+                                    <b>divulgue em seu próprio conteúdo</b>.
                                 </p>
                             </a>
                         </div>
@@ -700,7 +865,7 @@ export function Landing () {
             <section className='bg-gray-100 py-8'>
                 <div className='container mx-auto px-2 pt-4 pb-12 text-gray-800'>
                     <h2 className='w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800'>
-                        Planos
+                        Planos e preços
                     </h2>
                     <div className='w-full mb-4'>
                         <div className='h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t'></div>
@@ -726,7 +891,9 @@ export function Landing () {
                             </div>
                             <div className='flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6'>
                                 <div className='w-full pt-6 text-3xl font-bold text-center'>
-                                    <span className='line-through'>R$9.99</span>
+                                    <span className='line-through'>
+                                        R$ 19,99
+                                    </span>
                                     <span className='text-base line-through'>
                                         / por mês
                                     </span>
@@ -736,7 +903,7 @@ export function Landing () {
                                         disabled
                                         className='mx-auto line-through lg:mx-0 gradient font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition '
                                     >
-                                        Comprar
+                                        Fora do estoque
                                     </button>
                                 </div>
                             </div>
@@ -745,7 +912,7 @@ export function Landing () {
                             <div className='flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow'>
                                 <div className='p-8 text-3xl font-bold text-center border-b-4'>
                                     <span className='line-through'>
-                                        Plano Master
+                                        Plano Plus
                                     </span>{' '}
                                     <br />
                                     <span className='text-amber-500'>✰ ✰</span>
@@ -765,7 +932,7 @@ export function Landing () {
                             <div className='flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6'>
                                 <div className='w-full pt-6 text-3xl font-bold text-center'>
                                     <span className='line-through'>
-                                        R$399.99
+                                        R$ 199,99
                                     </span>
                                     <span className='text-base line-through'>
                                         / por mês
@@ -776,7 +943,7 @@ export function Landing () {
                                         disabled
                                         className='mx-auto line-through lg:mx-0 gradient font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition '
                                     >
-                                        Comprar
+                                        Fora do estoque
                                     </button>
                                 </div>
                             </div>
@@ -806,8 +973,11 @@ export function Landing () {
                                 </ul>
                             </div>
                             <div className='flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6'>
-                                <div className='w-full pt-6 text-4xl font-bold text-center'>
-                                    R$0,00
+                                <div className='w-full pt-6 text-3xl font-bold text-center'>
+                                    <span className=''>R$ 0,00</span>
+                                    <span className='text-base '>
+                                        / por mês
+                                    </span>
                                 </div>
                                 <div className='flex items-center justify-center'>
                                     <button
@@ -815,8 +985,1520 @@ export function Landing () {
 hover:scale-105 duration-300 ease-in-out
 hover:scale-105 duration-300 ease-in-out'
                                     >
-                                        Gratuito
+                                        Começar
                                     </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className='bg-gray-100 py-8 flex flex-col w-full items-center'>
+                <h3 className='my-4 text-3xl leading-tight'>
+                    Confira em detalhe cada país habilitado para sua Loja Online
+                </h3>
+                <div className='flex flag-list m-h-48 m-auto'>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-ar'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/ar_d3c9fe0a08.png'
+                                    alt='Argentina'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-ar'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-ar')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-ar'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-bo'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/bo_24c4db1988.png'
+                                    alt='Bolívia'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-bo'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-bo')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-bo'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-br'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/br_130c4c7a8f.png'
+                                    alt='Brasil'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-br'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-br')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-br'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-cl'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/cl_fe0f901dad.png'
+                                    alt='Chile'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-cl'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-cl')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-cl'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-co'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/co_927b16e130.png'
+                                    alt='Colômbia'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-co'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-co')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-co'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-cr'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/cr_a4384d7e98.png'
+                                    alt='Costa Rica'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-cr'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-cr')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-cr'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-ec'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/ec_dcfa162057.png'
+                                    alt='Equador'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-ec'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-ec')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-ec'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-gt'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/gt_e05e58057a.png'
+                                    alt='Guatemala'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-gt'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-gt')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-gt'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-mx'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/mx_f83a3a72ea.png'
+                                    alt='México'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-mx'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-mx')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-mx'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-py'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/py_ebc7c13668.png'
+                                    alt='Paraguai'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-py'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-py')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-py'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-pe'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/pe_9b02090f2a.png'
+                                    alt='Peru'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-pe'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-pe')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-pe'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-uy'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/uy_ead0c69722.png'
+                                    alt='Uruguai'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-uy'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-uy')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-uy'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-id'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/id_a229a156ca.png'
+                                    alt='Indonésia'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-id'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-id')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-id'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-my'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/my_af0bcbeafd.png'
+                                    alt='Malásia'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-my'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-my')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-my'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-kn'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/kn_04e54aab8e.png'
+                                    alt='Quênia'
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-kn'
+                            className='c-table-body__country input-flag c-input-country js-table__country'
+                            onChange={checked =>
+                                setSelected('input-country-kn')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-kn'] = ele)
+                            }
+                        />
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='input-country-ng'>
+                            <h3 className='c-table-country__title mx-2'>
+                                <img
+                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/ng_18e61d6aab.png'
+                                    alt='Nigéria '
+                                    loading='lazy'
+                                    className='c-table-sidebar__flag w-8'
+                                />
+                            </h3>
+                        </label>
+                        <input
+                            name='input-flag'
+                            type='radio'
+                            id='input-country-ng'
+                            className='c-table-body__country input-flag c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                        />
+                    </div>
+                </div>
+                <div className='c-pricing__table c-table u-text js-transition js-transition--parent'>
+                    <div className='c-table__body c-table-body js-transition__child'>
+                        <div
+                            id='country-ar'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-ar'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Argentina
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {3 + 2}.49%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {2 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_bank_transfer_bd2d42e7d8.svg'
+                                                width='31'
+                                                height='37'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Transferência Bancária
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {1 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-YfLYx'
+                                            className='style-YfLYx'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Argentina é
+                                                de 21%.&nbsp;&nbsp;
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-bo'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-bo'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Bolívia
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_bank_transfer_bd2d42e7d8.svg'
+                                                width='31'
+                                                height='37'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Transferência Bancária
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {2 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-gjwvM'
+                                            className='style-gjwvM'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Bolívia é
+                                                de 13%.&nbsp;&nbsp;
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-br'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-br'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Brasil
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {2 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            Boleto - USD 0.50* PIX - {0 + 2}
+                                            .99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_bank_transfer_bd2d42e7d8.svg'
+                                                width='31'
+                                                height='37'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Transferência Bancária
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {1 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-16kEI'
+                                            className='style-16kEI'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Brasil é de
+                                                18%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-cl'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-cl'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Chile
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {2 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {2 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_bank_transfer_bd2d42e7d8.svg'
+                                                width='31'
+                                                height='37'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Transferência Bancária
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {2 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-lCQ2N'
+                                            className='style-lCQ2N'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Chile é de
+                                                19%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-co'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-co'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Colômbia
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.20 + {1 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.20 + {1 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_bank_transfer_bd2d42e7d8.svg'
+                                                width='31'
+                                                height='37'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Transferência Bancária
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.20 + {1 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_bank_transfer_bd2d42e7d8.svg'
+                                                width='31'
+                                                height='37'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Transferência Bancária
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            PSE - USD 0.20 + {1 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-S3D28'
+                                            className='style-S3D28'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Colômbia é
+                                                de 19%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-cr'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-cr'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Costa Rica
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {4 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-PNqy9'
+                                            className='style-PNqy9'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Costa Rica
+                                                é de 13%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-ec'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-ec'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Equador
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {7 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.99 + {4 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-3s5iX'
+                                            className='style-3s5iX'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Equador é
+                                                de 12%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-gt'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-gt'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Guatemala
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {4 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-MomfV'
+                                            className='style-MomfV'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Guatemala é
+                                                de 12%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-mx'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-mx'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                México
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.20 + {2 + 2}.49%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.20 + {2 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_bank_transfer_bd2d42e7d8.svg'
+                                                width='31'
+                                                height='37'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Transferência Bancária
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.20 + {2 + 2}.49%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-8iKcV'
+                                            className='style-8iKcV'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em México é de
+                                                16%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-py'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-py'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Paraguai
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {3 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {2 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-JfFLz'
+                                            className='style-JfFLz'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Paraguai é
+                                                de 10%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-pe'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-pe'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Peru
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {2 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.99 + {2 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_bank_transfer_bd2d42e7d8.svg'
+                                                width='31'
+                                                height='37'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Transferência Bancária
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {2 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-EMdaL'
+                                            className='style-EMdaL'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Peru é de
+                                                18%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-uy'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-uy'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Uruguai
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {4 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.40 + {0 + 2}.99%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-5vmfB'
+                                            className='style-5vmfB'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Uruguai é
+                                                de 22%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            id='country-id'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-id'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Indonésia
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {5 + 2}.50%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.50 + {2 + 2}.50%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_bank_transfer_bd2d42e7d8.svg'
+                                                width='31'
+                                                height='37'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Transferência Bancária
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.50 + {2 + 2}.50%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_wallet_3397f71aeb.svg'
+                                                width='32'
+                                                height='29'
+                                                className='c-table-country__type-img'
+                                            />
+                                            E-Wallet
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {4 + 2}.50%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-JWjnq'
+                                            className='style-JWjnq'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Indonésia é
+                                                de 11%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-my'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-my'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Malásia
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {5 + 2}.50%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_cash_e2b3ad61b7.svg'
+                                                width='42'
+                                                height='41'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Dinheiro
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.20 + {5 + 2}.50%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_bank_transfer_bd2d42e7d8.svg'
+                                                width='31'
+                                                height='37'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Transferência Bancária
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            USD 0.50 + {3 + 2}.50%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_wallet_3397f71aeb.svg'
+                                                width='32'
+                                                height='29'
+                                                className='c-table-country__type-img'
+                                            />
+                                            E-Wallet
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {5 + 2}.50%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-ZOEwP'
+                                            className='style-ZOEwP'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Malásia é
+                                                de 6%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            id='country-kn'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-kn'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Quênia
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/mobile_money_c12f688da8.svg'
+                                                width='25'
+                                                height='39'
+                                                className='c-table-country__type-img'
+                                            />
+                                            E-Mobile-Wallet
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {3 + 2}.90%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-sMkT8'
+                                            className='style-sMkT8'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Quênia é de
+                                                16%.
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id='country-ng'
+                            className='c-table-body__country c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            style={
+                                selected === 'input-country-ng'
+                                    ? { display: 'flex' }
+                                    : {}
+                            }
+                        >
+                            <h3 className='c-table-country__title font-bold'>
+                                Nigéria
+                            </h3>
+                            <ul className='c-table-country__list'>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_card_763a55bf67.svg'
+                                                width='47'
+                                                height='30'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Cartões
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {3 + 2}.90%*
+                                        </span>
+                                    </p>
+                                </li>
+                                <li className='c-table-country__item'>
+                                    <p className='c-table-country__text'>
+                                        <span className='c-table-country__type'>
+                                            <img
+                                                src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/type_bank_transfer_bd2d42e7d8.svg'
+                                                width='31'
+                                                height='37'
+                                                className='c-table-country__type-img'
+                                            />
+                                            Transferência Bancária
+                                        </span>
+                                        <span className='c-table-country__info mx-4 flex self-center'>
+                                            {3 + 2}.90%*
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='c-table-country__disclaimer'>
+                                <div>
+                                    <p>
+                                        <span
+                                            id='style-Ov3pB'
+                                            className='style-Ov3pB'
+                                        >
+                                            <span className='text-xs'>
+                                                *Esta tarifa não inclui impostos
+                                                locais. O imposto em Nigéria é
+                                                de 7.5%.
+                                            </span>
+                                        </span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -829,15 +2511,10 @@ hover:scale-105 duration-300 ease-in-out'
                 version='1.1'
                 xmlns='http://www.w3.org/2000/svg'
             >
-                <g
-                    stroke='none'
-                    stroke-width='1'
-                    fill='none'
-                    fill-rule='evenodd'
-                >
+                <g stroke='none' strokeWidth='1' fill='none' fillRule='evenodd'>
                     <g
                         transform='translate(-1.000000, -14.000000)'
-                        fill-rule='nonzero'
+                        fillRule='nonzero'
                     >
                         <g className='wave' fill='#f5f5f5'>
                             <path d='M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824 1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22 C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121 804,45 C776.833,50.41 728.136,61.77 713,65 C660.023,76.309 621.544,87.729 584,94 C517.525,105.104 484.525,106.438 429,108 C379.49,106.484 342.823,104.484 319,102 C278.571,97.783 231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0 L1440,0 L1440,84 Z'></path>

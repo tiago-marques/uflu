@@ -1,0 +1,36 @@
+.c-pricing__table,
+.c-table-body__region,
+.c-table-body {
+    display: flex;
+}
+
+.c-table-country__list,
+.c-table-country__text {
+    display: flex;
+}
+
+.c-table-country__type {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+
+    font-size: small;
+}
+
+.c-table-body__country,
+.c-table__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-flag {
+    visibility: hidden;
+}
+
+div[id^='country'] {
+    display: none;
+}
+.flag-list {
+    flex-direction: wrap;
+}
