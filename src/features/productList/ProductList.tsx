@@ -3,13 +3,49 @@ import { Product } from '../product/Product'
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
 import { filterAsync, selectFilter } from './productListSlice'
 
+import p1 from '../../assets/product_1.jpeg'
+import p2 from '../../assets/product_2.jpeg'
+import p3 from '../../assets/product_3.jpeg'
+
 import './ProductList.css'
+
+interface ProductItem {
+    name: string
+    src: any
+    value: number
+    id: string
+    stockLeft: number
+}
 
 export function ProductList () {
     const storeFilter = useAppSelector(selectFilter)
     const dispatch = useAppDispatch()
 
     const [filter, setFilter] = useState('')
+
+    const product1 = {
+        name: 'Cropped - Gola alta / Manga curta canelado',
+        src: p1,
+        value: 30.0,
+        id: '1',
+        stockLeft: 12,
+    } as ProductItem
+
+    const product2 = {
+        name: 'Conjunto de pijama - Renda de contraste / Bainha com babado',
+        src: p2,
+        value: 60.0,
+        id: '2',
+        stockLeft: 8,
+    } as ProductItem
+
+    const product3 = {
+        name: 'Vestido de Noite  - Floral / Frente de proa',
+        src: p3,
+        value: 50.0,
+        id: '3',
+        stockLeft: 5,
+    } as ProductItem
 
     useEffect(() => {
         dispatch(filterAsync(filter))
@@ -28,14 +64,23 @@ export function ProductList () {
             </div>
             <div className='container mx-auto md:m-4 p-4 bg-white rounded-xl'>
                 <div className='flex flex-wrap p-6 font-mono w-full'>
-                    {['hello', 'world', 'xuxa', 'pele']
+                    {[product1, product2, product3]
                         .filter(
-                            f =>
-                                f.indexOf(storeFilter) !== -1 ||
-                                f.indexOf(filter) !== -1
+                            p =>
+                                p.name.indexOf(storeFilter) !== -1 ||
+                                p.name.indexOf(filter) !== -1
                         )
-                        .map(name => {
-                            return <Product key={name} name={name} />
+                        .map(p => {
+                            return (
+                                <Product
+                                    key={p.name}
+                                    name={p.name}
+                                    img={p.src}
+                                    value={p.value}
+                                    id={p.id}
+                                    stock={p.stockLeft}
+                                />
+                            )
                         })}
                 </div>
             </div>

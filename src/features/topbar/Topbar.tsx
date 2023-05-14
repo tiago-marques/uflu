@@ -22,7 +22,7 @@ export function Topbar () {
                     </div>
                     <div className='flex lg:hidden'>
                         <Link
-                            to='/@surfistaperdido'
+                            to='/@baabsvieira'
                             className='text-sm font-semibold leading-6 text-gray-900'
                         >
                             <button
@@ -50,7 +50,7 @@ export function Topbar () {
                     <div className='hidden lg:flex lg:gap-x-12'></div>
                     <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
                         <Link
-                            to='/@surfistaperdido'
+                            to='/@baabsvieira'
                             className='text-sm font-semibold leading-6 text-gray-900'
                         >
                             Ver Demonstração{' '}

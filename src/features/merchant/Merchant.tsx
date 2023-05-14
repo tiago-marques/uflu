@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
+import profile from '../../assets/profile.jpeg'
 import './Merchant.css'
 
 export function Merchant (props: any) {
@@ -7,7 +8,7 @@ export function Merchant (props: any) {
         <div className='flex flex-col pt-6 md:pr-12 font-mono'>
             <div className='m-auto w-48 h-48 mb-10 relative z-10 before:absolute before:rounded-full before:top-1 before:left-1 before:w-full before:h-full before:bg-teal-400'>
                 <img
-                    src='https://avatars.githubusercontent.com/u/8820039?v=4'
+                    src={profile}
                     alt=''
                     className='absolute z-10 inset-0 w-full h-full object-cover rounded-full'
                     loading='lazy'
@@ -27,7 +28,7 @@ export function Merchant (props: any) {
                 </div>
                 <div className='flex items-baseline my-6'>
                     <div className='space-y-3 flex flex-col text-sm font-medium'>
-                        <Link
+                        {/* <Link
                             to='admin'
                             className='text-sm font-semibold leading-6 text-gray-900'
                         >
@@ -43,7 +44,7 @@ export function Merchant (props: any) {
                                 alt=''
                             />
                             +5519996613308
-                        </a>
+                        </a> */}
                         <a
                             href='#'
                             className='relative flex grow m-1.5 pb-2 font-bold'
