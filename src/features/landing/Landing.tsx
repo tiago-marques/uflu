@@ -82,7 +82,7 @@ export function Landing () {
                     </g>
                 </svg>
             </div>
-            <section className='bg-white border-b py-8'>
+            <section className='bg-white py-8'>
                 <div className='container max-w-5xl mx-auto m-8'>
                     <h2 className='w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800'>
                         Crie sua Loja Online e comece a vender dentro da sua
@@ -607,7 +607,7 @@ export function Landing () {
                     <div className='flex flex-wrap'>
                         <div className='w-5/6 sm:w-1/2 p-6'>
                             <h3 className='text-3xl text-gray-800 font-bold leading-none mt-3'>
-                                Uma Loja Online por links.
+                                Uma Loja Online de links.
                             </h3>
                             <p className='text-gray-600 mb-8'>
                                 Você não depende mais da sua Loja Online, agora
@@ -616,7 +616,8 @@ export function Landing () {
                                 <br />
                                 Compartilhe seus links diretos com seus
                                 seguidores, de forma direcionada ao o que
-                                realmente importa, faça vendas insta-rápido{' '}
+                                realmente importa, comece suas vendas
+                                insta-rápido{' '}
                                 <b>sem passar por uma vitrine virtual</b>.
                             </p>
                         </div>
@@ -769,6 +770,7 @@ export function Landing () {
                 </div>
             </section>
             <section id='how' className='bg-white border-b py-8'>
+                <div className='h-1 mx-auto bg-gray-200 w-2/3 opacity-25 my-0 py-0 rounded-t'></div>
                 <div className='container mx-auto flex flex-wrap pt-4 pb-12'>
                     <h2 className='w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800'>
                         Como funciona?
@@ -995,7 +997,7 @@ hover:scale-105 duration-300 ease-in-out'
                 </div>
             </section>
             <section className='bg-white py-8 flex flex-col w-full items-center'>
-                <h3 className='my-4 text-3xl leading-tight'>
+                <h3 className='p-4 text-3xl leading-tight'>
                     Confira em detalhe cada país para sua Loja Online
                 </h3>
                 <div className='flex justify-center flag-list m-h-48 m-auto'>
@@ -2578,7 +2580,7 @@ hover:scale-105 duration-300 ease-in-out'
                     </button>
                 </div>
             </section>
-            <div className='relative mt-12'>
+            <div className='relative scale-x-[-1]'>
                 <svg
                     viewBox='0 0 1428 174'
                     version='1.1'
