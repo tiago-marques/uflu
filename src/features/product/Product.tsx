@@ -10,7 +10,7 @@ export function Product (props: {
 }) {
     return (
         <div className='flex flex-wrap lg:w-1/2 min-w-min md:p-6 font-mono overflow-x-hidden'>
-            <div className='flex-none w-32 before:h-32 mb-10 relative z-10 before:absolute before:-top-1 before:-left-1 before:w-full before:h-full before:bg-teal-400'>
+            <div className='flex-none md:w-32 before:h-32 mb-10 relative z-10 before:absolute before:-top-1 before:-left-1 before:w-full before:bg-teal-400'>
                 <img
                     src={props.img}
                     alt=''
@@ -18,7 +18,7 @@ export function Product (props: {
                     loading='lazy'
                 />
             </div>
-            <form className='flex-auto ms-40'>
+            <form className='flex-auto m-2 md:ms-40'>
                 <div className='relative flex flex-wrap items-baseline pb-6 before:bg-black before:absolute before:-top-6 before:bottom-0 before:-left-60 before:-right-2'>
                     <h1 className='relative w-full flex-none mb-2 text-2xl font-semibold text-white'>
                         {props.name}
@@ -31,7 +31,7 @@ export function Product (props: {
                 </div>
                 <p className='text-xs leading-6 text-slate-500'></p>
             </form>
-            <div className='flex w-full items-center justify-between'>
+            <div className='flex flex-wrap w-full items-center justify-between'>
                 <div className='flex items-baseline my-6'>
                     <div className='relative uppercase'>somente</div>
                     <div className='relative text-lg text-teal-400 mx-2'>
