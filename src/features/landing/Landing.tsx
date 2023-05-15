@@ -103,7 +103,7 @@ export function Landing () {
                                 <br />
                                 Sem necessidade de estoque ou logistica de
                                 entregas. Comece agora mesmo com{' '}
-                                <b>Shein*, Amazon e AliExpress</b>.
+                                <b>Shein, Shopee, Amazon e AliExpress</b>.
                             </p>
                         </div>
                         <div className='w-full sm:w-1/2 p-6'>
@@ -616,8 +616,7 @@ export function Landing () {
                                 <br />
                                 Compartilhe seus links diretos com seus
                                 seguidores, de forma direcionada ao o que
-                                realmente importa, comece suas vendas
-                                insta-rápido{' '}
+                                realmente importa, comece suas vendas{' '}
                                 <b>sem passar por uma vitrine virtual</b>.
                             </p>
                         </div>
@@ -816,12 +815,11 @@ export function Landing () {
                                     2. Cadastre os produtos.
                                 </p>
                                 <div className='w-full font-bold text-xl text-gray-800 px-6'>
-                                    Mais de +106 milhões produtos:
+                                    +286 Milhões de produtos:
                                 </div>
                                 <p className='text-gray-800 text-base p-6 mb-5'>
-                                    Comece agora cadastrando produtos dos
-                                    melhores: <b>Shein*, Amazon e AliExpress</b>
-                                    .
+                                    Comece agora com os melhores do mercado:{' '}
+                                    <b>Shein, Shopee, Amazon e AliExpress</b>.
                                 </p>
                             </a>
                         </div>
@@ -868,7 +866,7 @@ export function Landing () {
             <section className='bg-gray-100 py-8'>
                 <div className='container mx-auto px-2 pt-4 pb-2 text-gray-800'>
                     <h2 className='w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800'>
-                        Planos e preços
+                        Planos para Loja Online
                     </h2>
                     <div className='w-full mb-4'>
                         <div className='h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t'></div>
@@ -1377,6 +1375,12 @@ hover:scale-105 duration-300 ease-in-out'
                             type='radio'
                             id='input-country-ng'
                             className='c-table-body__country input-flag c-table-country js-table__country rounded-md py-8 p-4 bg-white min-w-2/3'
+                            onChange={checked =>
+                                setSelected('input-country-ng')
+                            }
+                            ref={ele =>
+                                (itemEls.current['input-country-ng'] = ele)
+                            }
                         />
                     </div>
                 </div>
@@ -1404,7 +1408,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {3 + 2}.49%*
@@ -1420,7 +1424,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {2 + 2}.99%*
@@ -1436,7 +1440,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='37'
                                                 className='c-table-country__type-img'
                                             />
-                                            Transferência Bancária
+                                            Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {1 + 2}.99%*
@@ -1486,7 +1490,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='37'
                                                 className='c-table-country__type-img'
                                             />
-                                            Transferência Bancária
+                                            Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {2 + 2}.99%*
@@ -1536,7 +1540,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {2 + 2}.99%*
@@ -1552,7 +1556,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             Boleto - USD 0.50* PIX - {0 + 2}
@@ -1569,7 +1573,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='37'
                                                 className='c-table-country__type-img'
                                             />
-                                            Transferência Bancária
+                                            Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {1 + 2}.99%*
@@ -1619,7 +1623,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {2 + 2}.99%*
@@ -1635,7 +1639,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {2 + 2}.99%*
@@ -1651,7 +1655,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='37'
                                                 className='c-table-country__type-img'
                                             />
-                                            Transferência Bancária
+                                            Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {2 + 2}.99%*
@@ -1701,7 +1705,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.20 + {1 + 2}.99%*
@@ -1717,7 +1721,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.20 + {1 + 2}.99%*
@@ -1733,7 +1737,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='37'
                                                 className='c-table-country__type-img'
                                             />
-                                            Transferência Bancária
+                                            Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.20 + {1 + 2}.99%*
@@ -1749,7 +1753,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='37'
                                                 className='c-table-country__type-img'
                                             />
-                                            Transferência Bancária
+                                            Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             PSE - USD 0.20 + {1 + 2}.99%*
@@ -1799,7 +1803,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {4 + 2}.99%*
@@ -1849,7 +1853,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {7 + 2}.99%*
@@ -1865,7 +1869,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.99 + {4 + 2}.99%*
@@ -1915,7 +1919,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {4 + 2}.99%*
@@ -1965,7 +1969,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.20 + {2 + 2}.49%*
@@ -1981,7 +1985,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.20 + {2 + 2}.99%*
@@ -1997,7 +2001,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='37'
                                                 className='c-table-country__type-img'
                                             />
-                                            Transferência Bancária
+                                            Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.20 + {2 + 2}.49%*
@@ -2047,7 +2051,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {3 + 2}.99%*
@@ -2063,7 +2067,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {2 + 2}.99%*
@@ -2113,7 +2117,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {2 + 2}.99%*
@@ -2129,7 +2133,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.99 + {2 + 2}.99%*
@@ -2145,7 +2149,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='37'
                                                 className='c-table-country__type-img'
                                             />
-                                            Transferência Bancária
+                                            Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {2 + 2}.99%*
@@ -2195,7 +2199,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {4 + 2}.99%*
@@ -2211,7 +2215,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.40 + {0 + 2}.99%*
@@ -2262,7 +2266,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {5 + 2}.50%*
@@ -2278,7 +2282,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.50 + {2 + 2}.50%*
@@ -2294,7 +2298,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='37'
                                                 className='c-table-country__type-img'
                                             />
-                                            Transferência Bancária
+                                            Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.50 + {2 + 2}.50%*
@@ -2310,7 +2314,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='29'
                                                 className='c-table-country__type-img'
                                             />
-                                            E-Wallet
+                                            E-Wallet**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {4 + 2}.50%*
@@ -2360,7 +2364,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {5 + 2}.50%*
@@ -2376,7 +2380,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='41'
                                                 className='c-table-country__type-img'
                                             />
-                                            Dinheiro
+                                            Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.20 + {5 + 2}.50%*
@@ -2392,7 +2396,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='37'
                                                 className='c-table-country__type-img'
                                             />
-                                            Transferência Bancária
+                                            Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             USD 0.50 + {3 + 2}.50%*
@@ -2408,7 +2412,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='29'
                                                 className='c-table-country__type-img'
                                             />
-                                            E-Wallet
+                                            E-Wallet**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {5 + 2}.50%*
@@ -2459,7 +2463,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='39'
                                                 className='c-table-country__type-img'
                                             />
-                                            E-Mobile-Wallet
+                                            E-Mobile-Wallet**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {3 + 2}.90%*
@@ -2509,7 +2513,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='30'
                                                 className='c-table-country__type-img'
                                             />
-                                            Cartões
+                                            Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {3 + 2}.90%*
@@ -2525,7 +2529,7 @@ hover:scale-105 duration-300 ease-in-out'
                                                 height='37'
                                                 className='c-table-country__type-img'
                                             />
-                                            Transferência Bancária
+                                            Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
                                             {3 + 2}.90%*
