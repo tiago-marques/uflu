@@ -607,7 +607,7 @@ export function Landing () {
                     <div className='flex flex-wrap'>
                         <div className='w-5/6 sm:w-1/2 p-6'>
                             <h3 className='text-3xl text-gray-800 font-bold leading-none mt-3'>
-                                Uma Loja Online de links.
+                                Uma Loja Online de links
                             </h3>
                             <p className='text-gray-600 mb-8'>
                                 Você não depende mais da sua Loja Online, agora
