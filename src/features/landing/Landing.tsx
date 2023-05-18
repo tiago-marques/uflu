@@ -1559,7 +1559,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            Boleto - USD 1.50* PIX - {0 + 2}
+                                            Boleto - USD 1,50* PIX - {0 + 2}
                                             .99%*
                                         </span>
                                     </p>
@@ -1708,7 +1708,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.20 + {1 + 2}.99%*
+                                            USD 1,20 + {1 + 2}.99%*
                                         </span>
                                     </p>
                                 </li>
@@ -1724,7 +1724,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.20 + {1 + 2}.99%*
+                                            USD 1,20 + {1 + 2}.99%*
                                         </span>
                                     </p>
                                 </li>
@@ -1740,7 +1740,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.20 + {1 + 2}.99%*
+                                            USD 1,20 + {1 + 2}.99%*
                                         </span>
                                     </p>
                                 </li>
@@ -1756,7 +1756,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            PSE - USD 1.20 + {1 + 2}.99%*
+                                            PSE - USD 1,20 + {1 + 2}.99%*
                                         </span>
                                     </p>
                                 </li>
@@ -1872,7 +1872,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.99 + {4 + 2}.99%*
+                                            USD 1,99 + {4 + 2}.99%*
                                         </span>
                                     </p>
                                 </li>
@@ -1972,7 +1972,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Cartões**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.20 + {2 + 2}.49%*
+                                            USD 1,20 + {2 + 2}.49%*
                                         </span>
                                     </p>
                                 </li>
@@ -1988,7 +1988,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.20 + {2 + 2}.99%*
+                                            USD 1,20 + {2 + 2}.99%*
                                         </span>
                                     </p>
                                 </li>
@@ -2004,7 +2004,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.20 + {2 + 2}.49%*
+                                            USD 1,20 + {2 + 2}.49%*
                                         </span>
                                     </p>
                                 </li>
@@ -2136,7 +2136,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.99 + {2 + 2}.99%*
+                                            USD 1,99 + {2 + 2}.99%*
                                         </span>
                                     </p>
                                 </li>
@@ -2218,7 +2218,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.40 + {0 + 2}.99%*
+                                            USD 1,40 + {0 + 2}.99%*
                                         </span>
                                     </p>
                                 </li>
@@ -2285,7 +2285,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.50 + {2 + 2}.50%*
+                                            USD 1,50 + {2 + 2}.50%*
                                         </span>
                                     </p>
                                 </li>
@@ -2301,7 +2301,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.50 + {2 + 2}.50%*
+                                            USD 1,50 + {2 + 2}.50%*
                                         </span>
                                     </p>
                                 </li>
@@ -2383,7 +2383,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Dinheiro**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.20 + {5 + 2}.50%*
+                                            USD 1,20 + {5 + 2}.50%*
                                         </span>
                                     </p>
                                 </li>
@@ -2399,7 +2399,7 @@ hover:scale-105 duration-300 ease-in-out'
                                             Transferência Bancária**
                                         </span>
                                         <span className='c-table-country__info mx-4 flex self-center'>
-                                            USD 1.50 + {3 + 2}.50%*
+                                            USD 1,50 + {3 + 2}.50%*
                                         </span>
                                     </p>
                                 </li>
