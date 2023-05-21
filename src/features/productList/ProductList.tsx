@@ -67,8 +67,14 @@ export function ProductList () {
                     {[product1, product2, product3]
                         .filter(
                             p =>
-                                p.name.indexOf(storeFilter) !== -1 ||
-                                p.name.indexOf(filter) !== -1
+                                p.name
+                                    .toLocaleLowerCase()
+                                    .indexOf(
+                                        storeFilter.toLocaleLowerCase()
+                                    ) !== -1 ||
+                                p.name
+                                    .toLocaleLowerCase()
+                                    .indexOf(filter.toLocaleLowerCase()) !== -1
                         )
                         .map(p => {
                             return (

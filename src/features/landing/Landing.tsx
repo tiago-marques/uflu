@@ -101,9 +101,9 @@ export function Landing () {
                                 somente nas vendas.
                                 <br />
                                 <br />
-                                Sem necessidade de estoque ou logistica de
-                                entregas. Comece agora mesmo com{' '}
-                                <b>Shein, Shopee, Amazon e AliExpress</b>.
+                                Comece agora mesmo com{' '}
+                                <b>Shein, Shopee, Amazon e AliExpress</b>, sem
+                                necessidade de estoque ou logistica de entregas.
                             </p>
                         </div>
                         <div className='w-full sm:w-1/2 p-6'>
@@ -592,12 +592,13 @@ export function Landing () {
                                 </h3>
                                 <p className='text-gray-600 mb-8'>
                                     Facilitamos para você toda a parte
-                                    burocrática, importe-se em divulgar seus
-                                    produtos. <br />
+                                    burocrática, sua responsabilidade é somente
+                                    vender. <br />
                                     <br />
-                                    Estamos preparados para que sua loja aceite{' '}
-                                    <b>+100 métodos de pagamento</b> em{' '}
-                                    <b>+15 países</b>!
+                                    Estamos preparados para que sua Loja Online
+                                    aceite <b>
+                                        +230 métodos de pagamento
+                                    </b> em <b>+15 países</b>!
                                     <br />
                                     <br />
                                 </p>
@@ -611,13 +612,13 @@ export function Landing () {
                             </h3>
                             <p className='text-gray-600 mb-8'>
                                 Você não depende mais da sua Loja Online, agora
-                                a Loja Online depende de você.
+                                seu negócio depende exclusivamente de uma coisa:
+                                vender.
                                 <br />
                                 <br />
-                                Compartilhe seus links diretos com seus
-                                seguidores, de forma direcionada ao o que
-                                realmente importa, comece suas vendas{' '}
-                                <b>sem passar por uma vitrine virtual</b>.
+                                Compartilhe os links de pagamento direto com
+                                seus seguidores, comece suas vendas{' '}
+                                <b>sem passar pela Loja Online, é só clicar</b>.
                             </p>
                         </div>
                         <div className='w-full sm:w-1/2 p-6'>
@@ -787,7 +788,7 @@ export function Landing () {
                                     1. Conecte sua rede social.
                                 </p>
                                 <div className='w-full font-bold text-xl text-gray-800 px-6'>
-                                    Controle pela sua rede social:
+                                    Tudo automático pela rede social:
                                 </div>
                                 <p className='text-gray-800 text-base p-6 mb-5'>
                                     A sua Loja Online é atualizada{' '}
@@ -818,7 +819,7 @@ export function Landing () {
                                     +286 Milhões de produtos:
                                 </div>
                                 <p className='text-gray-800 text-base p-6 mb-5'>
-                                    Comece agora com os melhores do mercado:{' '}
+                                    Venda os melhores produtos do mercado por:{' '}
                                     <b>Shein, Shopee, Amazon e AliExpress</b>.
                                 </p>
                             </a>
@@ -2628,7 +2629,7 @@ hover:scale-105 duration-300 ease-in-out'
             <footer className='bg-white'>
                 <div className='container mx-auto px-8'>
                     <div className='w-full flex flex-col md:flex-row py-6'>
-                        <div className='flex-1 mb-6 text-black'>
+                        <div className='flex-1 mb-6 text-slate-700'>
                             <a
                                 className='text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl'
                                 href='#'
@@ -2648,7 +2649,7 @@ hover:scale-105 duration-300 ease-in-out'
                                 <li className='mt-2 inline-block mr-2 md:block md:mr-0'>
                                     <a
                                         href='#'
-                                        className='no-underline hover:underline text-gray-800 hover:text-pink-500'
+                                        className='no-underline hover:underline text-gray-800 hover:text-slate-700'
                                     >
                                         FAQ
                                     </a>
@@ -2656,7 +2657,7 @@ hover:scale-105 duration-300 ease-in-out'
                                 <li className='mt-2 inline-block mr-2 md:block md:mr-0'>
                                     <a
                                         href='#'
-                                        className='no-underline hover:underline text-gray-800 hover:text-pink-500'
+                                        className='no-underline hover:underline text-gray-800 hover:text-slate-700'
                                     >
                                         Help
                                     </a>
@@ -2664,7 +2665,7 @@ hover:scale-105 duration-300 ease-in-out'
                                 <li className='mt-2 inline-block mr-2 md:block md:mr-0'>
                                     <a
                                         href='#'
-                                        className='no-underline hover:underline text-gray-800 hover:text-pink-500'
+                                        className='no-underline hover:underline text-gray-800 hover:text-slate-700'
                                     >
                                         Support
                                     </a>
@@ -2679,7 +2680,7 @@ hover:scale-105 duration-300 ease-in-out'
                                 <li className='mt-2 inline-block mr-2 md:block md:mr-0'>
                                     <a
                                         href='#'
-                                        className='no-underline hover:underline text-gray-800 hover:text-pink-500'
+                                        className='no-underline hover:underline text-gray-800 hover:text-slate-700'
                                     >
                                         Terms
                                     </a>
@@ -2687,7 +2688,7 @@ hover:scale-105 duration-300 ease-in-out'
                                 <li className='mt-2 inline-block mr-2 md:block md:mr-0'>
                                     <a
                                         href='#'
-                                        className='no-underline hover:underline text-gray-800 hover:text-pink-500'
+                                        className='no-underline hover:underline text-gray-800 hover:text-slate-700'
                                     >
                                         Privacy
                                     </a>
@@ -2702,7 +2703,7 @@ hover:scale-105 duration-300 ease-in-out'
                                 <li className='mt-2 inline-block mr-2 md:block md:mr-0'>
                                     <a
                                         href='#'
-                                        className='no-underline hover:underline text-gray-800 hover:text-pink-500'
+                                        className='no-underline hover:underline text-gray-800 hover:text-slate-700'
                                     >
                                         Facebook
                                     </a>
@@ -2710,7 +2711,7 @@ hover:scale-105 duration-300 ease-in-out'
                                 <li className='mt-2 inline-block mr-2 md:block md:mr-0'>
                                     <a
                                         href='#'
-                                        className='no-underline hover:underline text-gray-800 hover:text-pink-500'
+                                        className='no-underline hover:underline text-gray-800 hover:text-slate-700'
                                     >
                                         Linkedin
                                     </a>
@@ -2718,7 +2719,7 @@ hover:scale-105 duration-300 ease-in-out'
                                 <li className='mt-2 inline-block mr-2 md:block md:mr-0'>
                                     <a
                                         href='#'
-                                        className='no-underline hover:underline text-gray-800 hover:text-pink-500'
+                                        className='no-underline hover:underline text-gray-800 hover:text-slate-700'
                                     >
                                         Twitter
                                     </a>
@@ -2733,7 +2734,7 @@ hover:scale-105 duration-300 ease-in-out'
                                 <li className='mt-2 inline-block mr-2 md:block md:mr-0'>
                                     <a
                                         href='#'
-                                        className='no-underline hover:underline text-gray-800 hover:text-pink-500'
+                                        className='no-underline hover:underline text-gray-800 hover:text-slate-700'
                                     >
                                         Official Blog
                                     </a>
@@ -2741,7 +2742,7 @@ hover:scale-105 duration-300 ease-in-out'
                                 <li className='mt-2 inline-block mr-2 md:block md:mr-0'>
                                     <a
                                         href='#'
-                                        className='no-underline hover:underline text-gray-800 hover:text-pink-500'
+                                        className='no-underline hover:underline text-gray-800 hover:text-slate-700'
                                     >
                                         About Us
                                     </a>
@@ -2749,7 +2750,7 @@ hover:scale-105 duration-300 ease-in-out'
                                 <li className='mt-2 inline-block mr-2 md:block md:mr-0'>
                                     <a
                                         href='#'
-                                        className='no-underline hover:underline text-gray-800 hover:text-pink-500'
+                                        className='no-underline hover:underline text-gray-800 hover:text-slate-700'
                                     >
                                         Contact
                                     </a>

@@ -15,7 +15,7 @@ export function Merchant (props: any) {
                 />
             </div>
             <form className='flex-auto pl-6'>
-                <div className='relative flex flex-wrap items-baseline pb-6 before:bg-black before:absolute before:-top-6 before:bottom-0 before:-left-60 before:right-6'>
+                <div className='relative flex flex-wrap items-baseline pb-6 before:bg-slate-700 before:absolute before:-top-6 before:bottom-0 before:-left-60 before:right-6'>
                     <span className='relative shrink mb-2 text-2xl font-semibold text-white'>
                         {props.user}
                     </span>

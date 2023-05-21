@@ -7,6 +7,11 @@ module.exports = {
                 display: ['Source Serif Pro', 'Georgia', 'serif'],
                 body: ['Synonym', 'system-ui', 'sans-serif'],
             },
+            textColor: {
+                primary: '#334155',
+                secondary: '#000',
+                danger: '#e3342f',
+            },
             colors: {
                 primary: {
                     50: '#f8fafc',

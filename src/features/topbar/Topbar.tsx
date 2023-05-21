@@ -51,7 +51,7 @@ export function Topbar () {
                     <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
                         <Link
                             to='/@baabsvieira'
-                            className='text-sm font-semibold leading-6 text-gray-900'
+                            className='text-sm font-semibold leading-6 no-underline hover:underline text-gray-800 hover:text-slate-700'
                         >
                             Ver Demonstração{' '}
                             <span aria-hidden='true'>&rarr;</span>

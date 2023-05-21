@@ -19,7 +19,7 @@ export function Product (props: {
                 />
             </div>
             <form className='flex-auto m-2 md:ms-40'>
-                <div className='relative flex flex-wrap items-baseline pb-6 before:bg-black before:absolute before:-top-6 before:bottom-0 before:-left-60 before:-right-2'>
+                <div className='relative flex flex-wrap items-baseline pb-6 before:bg-slate-700 before:absolute before:-top-6 before:bottom-0 before:-left-60 before:-right-2'>
                     <h1 className='relative w-full flex-none mb-2 text-2xl font-semibold text-white'>
                         {props.name}
                     </h1>
@@ -43,7 +43,7 @@ export function Product (props: {
                     <div className='flex space-x-4'>
                         <Link to={`shop/${props.id}`}>
                             <button
-                                className='px-6 h-12 uppercase font-semibold tracking-wider border-2 border-black bg-teal-400 text-black'
+                                className='px-6 h-12 uppercase font-semibold tracking-wider border-2 border-black bg-teal-400 text-slate-700'
                                 type='submit'
                             >
                                 Comprar
@@ -51,7 +51,7 @@ export function Product (props: {
                         </Link>
                     </div>
                     <button
-                        className='flex-none flex items-center justify-center w-12 h-12 text-black'
+                        className='flex-none flex items-center justify-center w-12 h-12 text-slate-700'
                         type='button'
                         aria-label='Like'
                     >
