@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 
 import './Landing.scss'
 import { useEffect, useRef, useState } from 'react'
+import Login from '../login/Login'
 
 export function Landing () {
     const itemEls = useRef({} as any)
@@ -24,14 +25,7 @@ export function Landing () {
                         Venda produtos insta-fácil e insta-rápido para{' '}
                         <b>todo o mundo.</b>
                     </p>
-                    <button className='mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                        <img
-                            className='h-4 w-4 me-2 inline-flex'
-                            src='https://static.cdninstagram.com/rsrc.php/v3/ys/r/aM-g435MtEX.png'
-                            alt=''
-                        />
-                        Conectar seu Instagram
-                    </button>
+                    <Login />
                 </div>
                 <div className='w-full md:w-3/5'>
                     <img
@@ -2575,14 +2569,7 @@ hover:scale-105 duration-300 ease-in-out'
                         </button>
                     </Link>
                     <h3 className='mx-4 text-3xl leading-tight'>ou </h3>
-                    <button className='mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'>
-                        <img
-                            className='h-4 w-4 me-2 inline-flex'
-                            src='https://static.cdninstagram.com/rsrc.php/v3/ys/r/aM-g435MtEX.png'
-                            alt=''
-                        />
-                        Conectar seu Instagram
-                    </button>
+                    <Login />
                 </div>
             </section>
             <div className='relative scale-x-[-1]'>
