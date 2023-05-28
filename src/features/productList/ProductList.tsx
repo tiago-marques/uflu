@@ -7,6 +7,8 @@ import p1 from '../../assets/product_1.jpeg'
 import p2 from '../../assets/product_2.jpeg'
 import p3 from '../../assets/product_3.jpeg'
 
+import htmlParser from 'htmlstr-parser'
+
 import './ProductList.css'
 
 interface ProductItem {
@@ -18,6 +20,10 @@ interface ProductItem {
 }
 
 export function ProductList () {
+    // var html =
+    //     "<div style='height:10rpx;width: 20rpx;'>1<p>2<br/><a href='http://www.baidu.com'>3</a></p><p>2</p></div>"
+    // var x = htmlParser(html)
+    // console.log(x)
     const storeFilter = useAppSelector(selectFilter)
     const dispatch = useAppDispatch()
 

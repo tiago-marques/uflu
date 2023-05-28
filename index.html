@@ -30,7 +30,46 @@
                         console.log('ServiceWorker registration failed: ', err)
                     })
             }
+            Object.defineProperty(String.prototype, 'capitalize', {
+                value: function () {
+                    return this.charAt(0).toUpperCase() + this.slice(1)
+                },
+                enumerable: false,
+            })
+
+            Object.defineProperty(Array.prototype, 'range', {
+                configurable: true,
+                value: function (a, b, step) {
+                    step = !step ? 1 : step
+                    b = b / step
+                    for (var i = a; i <= b; i++) {
+                        this.push(i * step)
+                    }
+                    return this
+                },
+            })
+            Object.defineProperty(Date.prototype, 'format', {
+                configurable: true,
+                value: function (a, b, step) {
+                    step = !step ? 1 : step
+                    b = b / step
+                    for (var i = a; i <= b; i++) {
+                        this.push(i * step)
+                    }
+                    return this
+                },
+            })
+            Array.range = function (a, b, step) {
+                step = !step ? 1 : step
+                b = b / step
+                for (var i = a; i <= b; i++) {
+                    this.push(i * step)
+                }
+                return this
+            }
         </script>
+        <script src="https://gist.github.com/dariob/5537217.js"></script>
+
         <title>UFLU</title>
     </head>
 

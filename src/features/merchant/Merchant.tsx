@@ -1,9 +1,30 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 import profile from '../../assets/profile.jpeg'
+
 import './Merchant.css'
 
+//USAR https://github.com/unreleased/request-curl
+const rc = require('request-curl')
+//remover abaixo
+import curl from 'js-curl'
+
 export function Merchant (props: any) {
+    // USAR equest-curl
+    async function insta (uid: string) {
+        curl('https://www.instagram.com/surfistaperdido/?__a=1', console.log) // return buffer;
+    }
+
+    async function go () {
+        // let url = await insta(userId.value)
+        // link.innerText = url
+    }
+
+    useEffect(() => {
+        var x = insta('6343303999045780').then(x => console.log(x))
+    }, [])
+
     return (
         <div className='flex flex-col pt-6 md:pr-12 font-mono'>
             <div className='m-auto w-48 h-48 mb-10 relative z-10 before:absolute before:rounded-full before:top-1 before:left-1 before:w-full before:h-full before:bg-teal-400'>
