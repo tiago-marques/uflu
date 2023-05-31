@@ -6,19 +6,11 @@ import profile from '../../assets/profile.jpeg'
 import './Merchant.css'
 
 //USAR https://github.com/unreleased/request-curl
-const rc = require('request-curl')
-//remover abaixo
-import curl from 'js-curl'
 
 export function Merchant (props: any) {
-    // USAR equest-curl
+    // USAR request-curl
     async function insta (uid: string) {
-        curl('https://www.instagram.com/surfistaperdido/?__a=1', console.log) // return buffer;
-    }
-
-    async function go () {
-        // let url = await insta(userId.value)
-        // link.innerText = url
+        return fetch(`https://www.instagram.com/${props.user}/?__a=1`)
     }
 
     useEffect(() => {
@@ -26,7 +18,7 @@ export function Merchant (props: any) {
     }, [])
 
     return (
-        <div className='flex flex-col pt-6 md:pr-12 font-mono'>
+        <div className='flex flex-wrap pt-6 md:ps-6 font-mono'>
             <div className='m-auto w-48 h-48 mb-10 relative z-10 before:absolute before:rounded-full before:top-1 before:left-1 before:w-full before:h-full before:bg-teal-400'>
                 <img
                     src={profile}
@@ -35,8 +27,8 @@ export function Merchant (props: any) {
                     loading='lazy'
                 />
             </div>
-            <form className='flex-auto pl-6'>
-                <div className='relative flex flex-wrap items-baseline pb-6 before:bg-slate-700 before:absolute before:-top-6 before:bottom-0 before:-left-60 before:right-6'>
+            <form className='flex-auto ps-6'>
+                <div className='relative flex flex-wrap items-baseline pb-6 before:bg-slate-700 before:absolute before:-top-6 before:bottom-0 before:-left-60 before:right-0'>
                     <span className='relative shrink mb-2 text-2xl font-semibold text-white'>
                         {props.user}
                     </span>
@@ -48,7 +40,7 @@ export function Merchant (props: any) {
                     </span>
                 </div>
                 <div className='flex items-baseline my-6'>
-                    <div className='space-y-3 flex flex-col text-sm font-medium'>
+                    <div className='space-x-3 flex flex-wrap text-sm font-medium'>
                         {/* <Link
                             to='admin'
                             className='text-sm font-semibold leading-6 text-gray-900'

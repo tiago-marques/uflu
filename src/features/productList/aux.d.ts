@@ -1,1 +1,1 @@
-declare module 'js-curl'
+declare module 'request-curl'

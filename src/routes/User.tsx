@@ -1,16 +1,17 @@
 import { Outlet, useParams } from 'react-router-dom'
 import { Merchant } from '../features/merchant/Merchant'
 
-function App () {
-    let { user } = useParams()
+function User (prop: any) {
+    // let { user } = useParams()
+    let userProps = prop.user
     return (
-        <div className='mx-auto bg-stone-100 flex flex-wrap justify-center'>
+        <div className='mx-auto bg-stone-100 flex flex-col justify-center'>
             <div className='flex-none '>
-                <Merchant user={user} />
+                <Merchant user={userProps} />
             </div>
             <Outlet />
         </div>
     )
 }
 
-export default App
+export default User

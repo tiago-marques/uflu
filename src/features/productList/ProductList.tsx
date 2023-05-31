@@ -7,8 +7,6 @@ import p1 from '../../assets/product_1.jpeg'
 import p2 from '../../assets/product_2.jpeg'
 import p3 from '../../assets/product_3.jpeg'
 
-import htmlParser from 'htmlstr-parser'
-
 import './ProductList.css'
 
 interface ProductItem {
@@ -59,7 +57,7 @@ export function ProductList () {
 
     return (
         <div className='flex-1 min-w-full md:min-w-0'>
-            <div className='container mx-auto md:m-4 p-4 mb-6 bg-white rounded-xl'>
+            <div className='container mx-auto p-4 mb-6 bg-white rounded-xl'>
                 <input
                     type='text'
                     placeholder='Pesquisar...'
@@ -68,7 +66,7 @@ export function ProductList () {
                     onChange={e => setFilter(e.target.value)}
                 />
             </div>
-            <div className='container mx-auto md:m-4 p-4 bg-white rounded-xl'>
+            <div className='container mx-auto p-4 bg-white rounded-xl'>
                 <div className='flex flex-wrap p-6 font-mono w-full'>
                     {[product1, product2, product3]
                         .filter(

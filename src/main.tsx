@@ -12,23 +12,24 @@ import User from './routes/User'
 import { ProductList } from './features/productList/ProductList'
 import { Landing } from './features/landing/Landing'
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Root />,
-        errorElement: <ErrorPage />,
-        children: [
+console.log(window.location.host.split('.')[0])
+
+const router = (user: string) => {
+    if (!!user) {
+        return createBrowserRouter([
             {
-                path: '',
-                element: <Landing />,
-            },
-            {
-                path: ':user',
-                element: <User />,
+                path: '/',
+                element: <Root />,
                 children: [
                     {
                         path: '',
-                        element: <ProductList />,
+                        element: <User user={user} />,
+                        children: [
+                            {
+                                path: '',
+                                element: <ProductList />,
+                            },
+                        ],
                     },
                     {
                         path: 'admin',
@@ -48,14 +49,34 @@ const router = createBrowserRouter([
                     },
                 ],
             },
-        ],
-    },
-])
+        ])
+    }
+
+    return createBrowserRouter([
+        {
+            path: '/',
+            element: <Root />,
+            errorElement: <ErrorPage />,
+            children: [
+                {
+                    path: '',
+                    element: <Landing />,
+                },
+            ],
+        },
+    ])
+}
+
+const user =
+    window.location.host.split('.').length > 1 &&
+    window.location.host.split('.')[0] != 'uflu'
+        ? window.location.host.split('.')[0]
+        : ''
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         <Provider store={store}>
-            <RouterProvider router={router} />
+            <RouterProvider router={router(user)} />
         </Provider>
     </React.StrictMode>
 )
