@@ -86,7 +86,7 @@ export function Landing () {
                         <div className='h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t'></div>
                     </div>
                     <div className='flex flex-wrap'>
-                        <div className='w-5/6 sm:w-1/2 p-6'>
+                        {/* <div className='w-5/6 sm:w-1/2 p-6'>
                             <h3 className='text-3xl text-gray-800 font-bold leading-none mb-3'>
                                 Universo Dropshipping
                             </h3>
@@ -99,7 +99,7 @@ export function Landing () {
                                 <b>Shein, Shopee, Amazon e AliExpress</b>, sem
                                 necessidade de estoque ou logistica de entregas.
                             </p>
-                        </div>
+                        </div> 
                         <div className='w-full sm:w-1/2 p-6'>
                             <svg
                                 className='w-full sm:h-64 mx-auto'
@@ -393,7 +393,7 @@ export function Landing () {
                                     fill='#3c354c'
                                 />
                             </svg>
-                        </div>
+                        </div>*/}
                     </div>
                     <div className='flex flex-wrap flex-col-reverse sm:flex-row'>
                         <div className='w-full sm:w-1/2 p-6 mt-6'>
@@ -807,13 +807,14 @@ export function Landing () {
                                 className='flex flex-wrap no-underline hover:no-underline'
                             >
                                 <p className='w-full text-gray-600 text-xs md:text-sm px-6'>
-                                    2. Cadastre os produtos.
+                                    2. Cadastre seus produtos.
                                 </p>
                                 <div className='w-full font-bold text-xl text-gray-800 px-6'>
                                     +286 Milhões de produtos:
                                 </div>
                                 <p className='text-gray-800 text-base p-6 mb-5'>
-                                    Venda os melhores produtos do mercado por:{' '}
+                                    Te ajudamos a vender os melhores produtos do
+                                    mercado com:{' '}
                                     <b>Shein, Shopee, Amazon e AliExpress</b>.
                                 </p>
                             </a>

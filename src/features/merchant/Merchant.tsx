@@ -10,7 +10,10 @@ import './Merchant.css'
 export function Merchant (props: any) {
     // USAR request-curl
     async function insta (uid: string) {
-        return fetch(`https://www.instagram.com/${props.user}/?__a=1`)
+        return fetch('https://www.save-free.com/process', {
+            body: 'instagram_url=surfistaperdido&type=profile&resource=save',
+            method: 'POST',
+        })
     }
 
     useEffect(() => {
