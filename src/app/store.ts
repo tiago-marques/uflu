@@ -1,9 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import productListReducer from '../features/productList/productListSlice'
+import checkoutReducer from '../features/checkout/checkoutSlice'
+import rootReducer from '../routes/rootSlice'
 
 export const store = configureStore({
     reducer: {
+        root: rootReducer,
         productList: productListReducer,
+        checkout: checkoutReducer,
     },
 })
 

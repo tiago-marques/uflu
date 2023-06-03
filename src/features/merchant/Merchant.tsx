@@ -22,7 +22,7 @@ export function Merchant (props: any) {
 
     return (
         <div className='flex flex-wrap pt-6 md:ps-6 font-mono'>
-            <div className='m-auto w-48 h-48 mb-10 relative z-10 before:absolute before:rounded-full before:top-1 before:left-1 before:w-full before:h-full before:bg-teal-400'>
+            <div className='m-auto w-48 h-48 relative z-10 before:absolute before:rounded-full before:-top-1 before:-left-1 before:w-full before:h-full before:bg-teal-400'>
                 <img
                     src={profile}
                     alt=''

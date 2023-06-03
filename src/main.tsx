@@ -6,11 +6,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import Root from './routes/root'
 import ErrorPage from './error-page'
-import App from './App'
-import { Topbar } from './features/topbar/Topbar'
 import User from './routes/User'
 import { ProductList } from './features/productList/ProductList'
 import { Landing } from './features/landing/Landing'
+import { Checkout } from './features/checkout/Checkout'
+import UserProduct from './routes/UserProduct'
 
 console.log(window.location.host.split('.')[0])
 
@@ -39,13 +39,15 @@ const router = (user: string) => {
                             </div>
                         ),
                     },
+                ],
+            },
+            {
+                path: 'shop/:item',
+                element: <UserProduct user={user} />,
+                children: [
                     {
-                        path: 'shop/:item',
-                        element: (
-                            <div className='flex flex-auto pl-6'>
-                                <h1>Product</h1>
-                            </div>
-                        ),
+                        path: '',
+                        element: <Checkout />,
                     },
                 ],
             },
