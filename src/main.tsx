@@ -12,8 +12,6 @@ import { Landing } from './features/landing/Landing'
 import { Checkout } from './features/checkout/Checkout'
 import UserProduct from './routes/UserProduct'
 
-console.log(window.location.host.split('.')[0])
-
 const router = (user: string) => {
     if (!!user) {
         return createBrowserRouter([
