@@ -55,14 +55,14 @@ const router = (user: string) => {
     return createBrowserRouter([
         {
             path: '/',
-            element: <Root />,
+            element: <Landing />,
             errorElement: <ErrorPage />,
-            children: [
-                {
-                    path: '',
-                    element: <Landing />,
-                },
-            ],
+            // children: [
+            //     {
+            //         path: '',
+            //         element: <Landing />,
+            //     },
+            // ],
         },
     ])
 }

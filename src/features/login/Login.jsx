@@ -101,14 +101,14 @@ const Login = () => {
             scope={
                 'user_profile,user_media,instagram_graph_user_profile,instagram_graph_user_media'
             }
-            cssClass='mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out'
+            cssClass='mx-auto lg:mx-0 hover:underline text-gray-800 font-bold rounded-full py-1 px-2  focus:outline-none  transform transition hover:scale-105 duration-300 ease-in-out'
         >
             <img
                 className='h-4 w-4 me-2 inline-flex'
                 src='https://static.cdninstagram.com/rsrc.php/v3/ys/r/aM-g435MtEX.png'
                 alt=''
             />
-            Conectar seu Instagram
+            Conectar com Instagram
             {/* </button> */}
         </InstagramLogin>
     )
