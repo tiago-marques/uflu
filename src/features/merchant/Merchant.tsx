@@ -1,30 +1,43 @@
-import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 import profile from '../../assets/profile.jpeg'
 
 import './Merchant.css'
 
-//USAR https://github.com/unreleased/request-curl
-
 export function Merchant (props: any) {
-    // USAR request-curl
-    async function insta (uid: string) {
-        return fetch('https://www.save-free.com/process', {
-            body: 'instagram_url=surfistaperdido&type=profile&resource=save',
-            method: 'POST',
-        })
-    }
+    let [searchParams, setSearchParams] = useSearchParams()
+    let [userId, setUserId] = useState(searchParams.get('user_id'))
+    let [accessToken, setAccessToken] = useState(
+        searchParams.get('access_token')
+    )
+    let [photo, setPhoto] = useState('')
+    let url = new URL(window.location.href)
+    let username = url.hostname.split('.')[0]
 
     useEffect(() => {
-        var x = insta('6343303999045780').then(x => console.log(x))
+        const exec = async () => {
+            let response = await axios.get(
+                `https://graph.instagram.com/me?fields=id,username,profile_picture_url,name,biography&access_token=${accessToken}`
+            )
+            let response2 = await axios.get(
+                `https://www.instagram.com/${response.data.username}/?__a=1&__d=1&access_token=${accessToken}`
+            )
+            if (response2) {
+                console.log(response2)
+                setPhoto(response2.data.graphql.user.profile_pic_url_hd)
+            }
+        }
+        exec()
     }, [])
 
     return (
         <div className='flex flex-wrap pt-6 md:ps-6 font-mono'>
             <div className='m-auto w-48 h-48 relative z-10 before:absolute before:rounded-full before:-top-1 before:-left-1 before:w-full before:h-full before:bg-teal-400'>
                 <img
-                    src={profile}
+                    crossOrigin='anonymous'
+                    src={photo}
                     alt=''
                     className='absolute z-10 inset-0 w-full h-full object-cover rounded-full'
                     loading='lazy'
@@ -62,7 +75,7 @@ export function Merchant (props: any) {
                             +5519996613308
                         </a> */}
                         <a
-                            href='#'
+                            href={`https://www.instagram.com/${username}/`}
                             className='relative flex grow m-1.5 pb-2 font-bold'
                         >
                             <img

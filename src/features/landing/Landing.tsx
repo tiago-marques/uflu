@@ -4,7 +4,8 @@ import dropshipping from '../../assets/dropshipping.svg'
 import worldmedias from '../../assets/worldmedias.svg'
 import full from '../../assets/full.svg'
 
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
+import axios, { isCancel, AxiosError } from 'axios'
 
 import './Landing.scss'
 import { useEffect, useRef, useState } from 'react'
@@ -13,6 +14,38 @@ import Login from '../login/Login'
 export function Landing () {
     const itemEls = useRef({} as any)
     const [selected, setSelected] = useState('')
+
+    let [searchParams, setSearchParams] = useSearchParams()
+    let [code, setCode] = useState(searchParams.get('code'))
+    if (code) {
+        axios
+            .postForm('https://api.instagram.com/oauth/access_token', {
+                client_id: process.env.client_id,
+                client_secret: process.env.client_secret,
+                grant_type: 'authorization_code',
+                redirect_uri: 'https://uflu.shop/',
+                code: code,
+            })
+            .then(response => {
+                console.log(response.data)
+                axios
+                    .get(
+                        `https://graph.instagram.com/${response.data.user_id}?fields=id,username&access_token=${response.data.access_token}`
+                    )
+                    .then(response2 => {
+                        console.log(window.location.href)
+                        let url = new URL(window.location.href)
+                        console.log(
+                            `${url.protocol}//${response2.data.username}.${url.host}`
+                        )
+
+                        window.location.href = `${url.protocol}//${response2.data.username}.${url.host}?user_id=${response.data.user_id}&access_token=${response.data.access_token}`
+                    })
+            })
+
+        //
+        // return redirect('/login')
+    }
 
     return (
         <>
@@ -939,271 +972,6 @@ export function Landing () {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section className='flex flex-col space-y-32 mx-auto container overflow-hidden'>
-                    <div className='a-scroll'>
-                        <div className='a-m-scroll'>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/ar_d3c9fe0a08.png'
-                                    alt='Argentina'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/bo_24c4db1988.png'
-                                    alt='Bolívia'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/br_130c4c7a8f.png'
-                                    alt='Brasil'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/cl_fe0f901dad.png'
-                                    alt='Chile'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/co_927b16e130.png'
-                                    alt='Colômbia'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/cr_a4384d7e98.png'
-                                    alt='Costa Rica'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/ec_dcfa162057.png'
-                                    alt='Equador'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/gt_e05e58057a.png'
-                                    alt='Guatemala'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/mx_f83a3a72ea.png'
-                                    alt='México'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/py_ebc7c13668.png'
-                                    alt='Paraguai'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/pe_9b02090f2a.png'
-                                    alt='Peru'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/uy_ead0c69722.png'
-                                    alt='Uruguai'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/id_a229a156ca.png'
-                                    alt='Indonésia'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/my_af0bcbeafd.png'
-                                    alt='Malásia'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/kn_04e54aab8e.png'
-                                    alt='Quênia'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/ng_18e61d6aab.png'
-                                    alt='Nigéria '
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                        </div>
-                        <div className='a-m-scroll2'>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/ar_d3c9fe0a08.png'
-                                    alt='Argentina'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/bo_24c4db1988.png'
-                                    alt='Bolívia'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/br_130c4c7a8f.png'
-                                    alt='Brasil'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/cl_fe0f901dad.png'
-                                    alt='Chile'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/co_927b16e130.png'
-                                    alt='Colômbia'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/cr_a4384d7e98.png'
-                                    alt='Costa Rica'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/ec_dcfa162057.png'
-                                    alt='Equador'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/gt_e05e58057a.png'
-                                    alt='Guatemala'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/mx_f83a3a72ea.png'
-                                    alt='México'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/py_ebc7c13668.png'
-                                    alt='Paraguai'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/pe_9b02090f2a.png'
-                                    alt='Peru'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/uy_ead0c69722.png'
-                                    alt='Uruguai'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/id_a229a156ca.png'
-                                    alt='Indonésia'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/my_af0bcbeafd.png'
-                                    alt='Malásia'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/kn_04e54aab8e.png'
-                                    alt='Quênia'
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
-                            <span>
-                                <img
-                                    src='https://mic-production-gdk8vkkpcr-dgoapi-1vgi-mediabucket-jwszfb1ikxnz.s3.amazonaws.com/ng_18e61d6aab.png'
-                                    alt='Nigéria '
-                                    loading='lazy'
-                                    className='c-table-sidebar__flag w-8'
-                                />
-                            </span>
                         </div>
                     </div>
                 </section>
