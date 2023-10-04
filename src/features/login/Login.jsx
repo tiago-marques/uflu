@@ -94,7 +94,7 @@ const Login = () => {
 
     return (
         <InstagramLogin
-            clientId={process.env.client_id}
+            clientId='169008989469536'
             onSuccess={successResponseInstagram}
             onFailure={failResponseInstagram}
             redirectUri={'https://uflu.shop/'}

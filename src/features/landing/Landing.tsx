@@ -20,8 +20,8 @@ export function Landing () {
     if (code) {
         axios
             .postForm('https://api.instagram.com/oauth/access_token', {
-                client_id: process.env.client_id,
-                client_secret: process.env.client_secret,
+                client_id: '169008989469536',
+                client_secret: 'ddc3f0350d323d970228660f765ee8c0',
                 grant_type: 'authorization_code',
                 redirect_uri: 'https://uflu.shop/',
                 code: code,
