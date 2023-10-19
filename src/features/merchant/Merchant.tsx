@@ -18,6 +18,9 @@ export function Merchant (props: any) {
 
     useEffect(() => {
         const exec = async () => {
+            let response = await axios.get(
+                `https://graph.instagram.com/me?fields=id,username,profile_picture_url,name,biography&access_token=${accessToken}`
+            )
             let response2 = await axios.get(
                 `https://www.instagram.com/${response.data.username}/?__a=1&__d=1`
             )
