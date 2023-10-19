@@ -19,7 +19,7 @@ export function Landing () {
     let [code, setCode] = useState(searchParams.get('code'))
     if (code) {
         axios
-            .postForm('hhttps://api.instagram.com/oauth/authorize', {
+            .postForm('https://api.instagram.com/oauth/authorize', {
                 client_id: '169008989469536',
                 redirect_uri: 'https://uflu.shop/',
                 scope: 'user_profile,user_media',
