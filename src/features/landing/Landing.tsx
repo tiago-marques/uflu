@@ -19,12 +19,11 @@ export function Landing () {
     let [code, setCode] = useState(searchParams.get('code'))
     if (code) {
         axios
-            .postForm('https://api.instagram.com/oauth/access_token', {
+            .postForm('hhttps://api.instagram.com/oauth/authorize', {
                 client_id: '169008989469536',
-                client_secret: 'ddc3f0350d323d970228660f765ee8c0',
-                grant_type: 'authorization_code',
                 redirect_uri: 'https://uflu.shop/',
-                code: code,
+                scope: 'user_profile,user_media',
+                response_type: 'code',
             })
             .then(response => {
                 console.log(response.data)
