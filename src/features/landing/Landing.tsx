@@ -25,7 +25,7 @@ export function Landing () {
   &response_type=code,
   &scope={scope} */
             .get(
-                'https://api.instagram.com/oauth/authorize?client_id=169008989469536&redirect_uri=https://uflu.shop/&response_type=code,&scope=1'
+                'https://api.instagram.com/oauth/authorize?client_id=169008989469536&redirect_uri=https://uflu.shop/scope=user_profile,user_media&response_type=code'
             )
             .then(response => {
                 console.log(response.data)
