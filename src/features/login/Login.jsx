@@ -99,7 +99,7 @@ const Login = () => {
             onFailure={failResponseInstagram}
             redirectUri={'https://uflu.shop/'}
             scope={
-                'user_profile,user_media,instagram_graph_user_profile,instagram_graph_user_media'
+                'user_profile,user_media,instagram_graph_user_media'
             }
             cssClass='mx-auto lg:mx-0 hover:underline text-gray-800 font-bold rounded-full py-1 px-2  focus:outline-none  transform transition hover:scale-105 duration-300 ease-in-out'
         >
