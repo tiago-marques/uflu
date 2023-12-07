@@ -666,6 +666,11 @@ progress {
     max-width: 1320px;
   }
 }
+
+.row-reversed {
+    flex-direction: row-reverse;
+}
+
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
