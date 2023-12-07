@@ -82,15 +82,15 @@ export function Landing() {
                 <header className="py-5">
                     <div className="container px-5 pb-5">
                         <div className="row gx-5 align-items-center">
-                            <div className="col-xxl-5">
+                            <div className="col-xxl-5 pl-0">
                                 <div className="text-left text-xxl-start">
                                     <div className="badge bg-gradient-badge-primary-to-secondary text-white mb-4"><div className="text-uppercase">Simple &middot; Social &middot; Sales</div></div>
-                                    <div className="fs-3 fw-light text-muted">One-click-to</div>
-                                    <h1 className="display-4 fw-bolder mb-2"><span className="text-gradient d-inline">Social Media eCommerce</span></h1>
+                                    <div className="fs-3 fw-light text-muted"><b>One-click-to</b></div>
+                                    <h1 className="display-5 fw-bolder mb-2"><span className="text-gradient d-inline">Social Media eCommerce</span></h1>
                                     <div className="d-grid gap-3 d-sm-flex mb-3">
                                         <a className="btn btn-lg fs-6 fw-bolder text-left p-0">
                                             <b>Log in</b> with
-                                            <div className='h-6 inline-block mx-2'>
+                                            <div className='h-4 inline-block mx-2'>
                                                 <img className='h-auto w-auto max-w-full max-h-full object-contain aspect-square inline-block mx-2' src={social1} />
                                                 <img className='h-auto w-auto max-w-full max-h-full object-contain aspect-square inline-block mx-2' src={social2} />
                                                 <img className='h-auto w-auto max-w-full max-h-full object-contain aspect-square inline-block mx-2' src={social3} />
