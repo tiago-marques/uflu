@@ -75,7 +75,7 @@ export function Landing() {
                             <div className="col-xxl-5">
                                 <div className="text-center text-xxl-start">
                                     <div className="badge bg-gradient-badge-primary-to-secondary text-white mb-4"><div className="text-uppercase">Simple &middot; Social &middot; Sales</div></div>
-                                    <div className="fs-3 fw-light text-muted">Transform your business to</div>
+                                    <div className="fs-3 fw-light text-muted">Starting your business to</div>
                                     <h1 className="display-3 fw-bolder mb-5"><span className="text-gradient d-inline">Social Media eCommerce</span></h1>
                                     <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                                         <a className="btn btn-outline-primary btn-lg py-3 px-5 fs-6 fw-bolder" href="projects.html">
@@ -101,6 +101,24 @@ export function Landing() {
                     </div>
                 </header>
                 <section className="bg-light py-5">
+                    <div className="container px-5">
+                        <div className="row gx-5 justify-content-center">
+                            <div className="col-xxl-8">
+                                <div className="text-center my-5">
+                                    <h2 className="display-5 fw-bolder"><span className="text-gradient d-inline">About Me</span></h2>
+                                    <p className="lead fw-light mb-4">My name is Start Bootstrap and I help brands grow.</p>
+                                    <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit dolorum itaque qui unde quisquam consequatur autem. Eveniet quasi nobis aliquid cumque officiis sed rem iure ipsa! Praesentium ratione atque dolorem?</p>
+                                    <div className="d-flex justify-content-center fs-2 gap-4">
+                                        <a className="text-gradient" href="#!"><i className="bi bi-twitter"></i></a>
+                                        <a className="text-gradient" href="#!"><i className="bi bi-linkedin"></i></a>
+                                        <a className="text-gradient" href="#!"><i className="bi bi-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className="bg-white py-5">
                     <div className="container px-5">
                         <div className="row gx-5 justify-content-center">
                             <div className="col-xxl-8">
