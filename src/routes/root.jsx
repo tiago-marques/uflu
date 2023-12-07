@@ -4,7 +4,6 @@ import { Topbar } from '../features/topbar/Topbar'
 export default function Root (props) {
     return (
         <>
-            <Topbar />
             <Outlet />
         </>
     )

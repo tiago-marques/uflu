@@ -11,6 +11,8 @@ import { ProductList } from './features/productList/ProductList'
 import { Landing } from './features/landing/Landing'
 import { Checkout } from './features/checkout/Checkout'
 import UserProduct from './routes/UserProduct'
+import { Merchant } from './features/merchant/Merchant'
+import { Dashboard } from './features/dashboard/Dashboard'
 
 const router = (user: string) => {
     if (!!user) {
@@ -31,11 +33,13 @@ const router = (user: string) => {
                     },
                     {
                         path: 'admin',
-                        element: (
-                            <div className='flex flex-auto pl-6'>
-                                <h1>Merchant Admin</h1>
-                            </div>
-                        ),
+                        element: <Dashboard />,
+                        children: [
+                            {
+                                path: '',
+                                element: <User user={user} sidebar />,
+                            },
+                        ],
                     },
                 ],
             },
@@ -69,7 +73,7 @@ const router = (user: string) => {
 
 const user =
     window.location.host.split('.').length > 1 &&
-    window.location.host.split('.')[0] != 'uflu'
+        window.location.host.split('.')[0] != 'uflu'
         ? window.location.host.split('.')[0]
         : ''
 
