@@ -78,7 +78,7 @@ export function Landing() {
                             <div className="col-xxl-5">
                                 <div className="text-center text-xxl-start">
                                     <div className="badge bg-gradient-badge-primary-to-secondary text-white mb-4"><div className="text-uppercase">Simple &middot; Social &middot; Sales</div></div>
-                                    <div className="fs-3 fw-light text-muted">Starting your business to</div>
+                                    <div className="fs-3 fw-light text-muted">One-click-to</div>
                                     <h1 className="display-3 fw-bolder mb-5"><span className="text-gradient d-inline">Social Media eCommerce</span></h1>
                                     <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                                         <a className="btn btn-outline-primary btn-lg py-3 px-5 fs-6 fw-bolder" href="projects.html">
@@ -123,8 +123,7 @@ export function Landing() {
                 </section>
                 <section className="bg-white py-5">
                     <div className="container px-5">
-
-                        <div className="row gx-5 justify-content-start my-5">
+                        <div className="row gx-5 justify-content-start my-20">
                             <div className="col-xxl-8">
                                 <div className='flex'>
                                     <div className="text-left my-5">
@@ -141,7 +140,7 @@ export function Landing() {
                                 </div>
                             </div>
                         </div>
-                        <div className="row gx-5 justify-content-end my-5 sm:justify-content-start">
+                        <div className="row gx-5 justify-content-end my-20 sm:justify-content-start">
                             <div className="col-xxl-8">
                                 <div className='flex flex-row-reverse'>
                                     <div className="text-right my-5">
@@ -158,7 +157,7 @@ export function Landing() {
                                 </div>
                             </div>
                         </div>
-                        <div className="row gx-5 justify-content-start my-5">
+                        <div className="row gx-5 justify-content-start my-20">
                             <div className="col-xxl-8">
                                 <div className='flex'>
                                     <div className="text-left my-5">
@@ -175,8 +174,7 @@ export function Landing() {
                                 </div>
                             </div>
                         </div>
-
-                        <div className="row gx-5 justify-content-end my-5 sm:justify-content-start">
+                        <div className="row gx-5 justify-content-end my-20 sm:justify-content-start">
                             <div className="col-xxl-8">
                                 <div className='flex flex-row-reverse'>
                                     <div className="text-right my-5">
