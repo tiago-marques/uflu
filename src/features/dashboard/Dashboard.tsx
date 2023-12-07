@@ -7,14 +7,9 @@ import full from '../../assets/full.svg'
 
 import './Dashboard.css'
 
-// import './vendor/jquery/jquery.min.js';
-import './vendor/bootstrap/js/bootstrap.bundle.min.js'
-// import './vendor/jquery-easing/jquery.easing.min.js'
-// import './vendor/chart.js/Chart.min.js'
-// import './vendor/js/demo/chart-area-demo.js'
-// import './vendor/js/demo/chart-pie-demo.js'
-import './vendor/js/sb-admin-2.js'
-import './vendor/fontawesome-free/css/all.min.css'
+// import './vendor/js/demo/chart-pie-demo'
+// import './vendor/js/demo/chart-area-demo'
+
 
 export function Dashboard(props: any) {
     let [searchParams, setSearchParams] = useSearchParams()
@@ -27,19 +22,186 @@ export function Dashboard(props: any) {
     let username = url.hostname.split('.')[0]
 
     useEffect(() => {
-        // const exec = async () => {
-        //     let response = await axios.get(
-        //         `https://graph.instagram.com/me?fields=id,username,profile_picture_url,name,biography&access_token=${accessToken}`
-        //     )
-        //     let response2 = await axios.get(
-        //         `https://www.instagram.com/${response.data.username}/?__a=1&__d=1`
-        //     )
-        //     if (response2) {
-        //         console.log(response2)
-        //         setPhoto(response2.data.graphql.user.profile_pic_url_hd)
-        //     }
-        // }
-        // exec()
+        // Set new default font family and font color to mimic Bootstrap's default styling
+        Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+        Chart.defaults.global.defaultFontColor = '#858796';
+
+        // Pie Chart Example
+        var ctx = document.getElementById("myPieChart");
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        var myPieChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ["Direct", "Referral", "Social"],
+                datasets: [{
+                    data: [55, 30, 15],
+                    backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+                    hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+                    hoverBorderColor: "rgba(234, 236, 244, 1)",
+                }],
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10,
+                },
+                legend: {
+                    display: false
+                },
+                cutoutPercentage: 80,
+            },
+        });
+        // Set new default font family and font color to mimic Bootstrap's default styling
+        Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+        Chart.defaults.global.defaultFontColor = '#858796';
+
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        function number_format(number, decimals, dec_point, thousands_sep) {
+            // *     example: number_format(1234.56, 2, ',', ' ');
+            // *     return: '1 234,56'
+            number = (number + '').replace(',', '').replace(' ', '');
+            var n = !isFinite(+number) ? 0 : +number,
+                prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+                sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+                dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+                s = '',
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                toFixedFix = function (n, prec) {
+                    var k = Math.pow(10, prec);
+                    return '' + Math.round(n * k) / k;
+                };
+            // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+            if (s[0].length > 3) {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+            }
+            if ((s[1] || '').length < prec) {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                s[1] = s[1] || '';
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                s[1] += new Array(prec - s[1].length + 1).join('0');
+            }
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            return s.join(dec);
+        }
+
+        // Area Chart Example
+        var ctx = document.getElementById("myAreaChart");
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                    label: "Earnings",
+                    lineTension: 0.3,
+                    backgroundColor: "rgba(78, 115, 223, 0.05)",
+                    borderColor: "rgba(78, 115, 223, 1)",
+                    pointRadius: 3,
+                    pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                    pointBorderColor: "rgba(78, 115, 223, 1)",
+                    pointHoverRadius: 3,
+                    pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                    pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                    pointHitRadius: 10,
+                    pointBorderWidth: 2,
+                    data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
+                }],
+            },
+            options: {
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 25,
+                        top: 25,
+                        bottom: 0
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        time: {
+                            unit: 'date'
+                        },
+                        gridLines: {
+                            display: false,
+                            drawBorder: false
+                        },
+                        ticks: {
+                            maxTicksLimit: 7
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            maxTicksLimit: 5,
+                            padding: 10,
+                            // Include a dollar sign in the ticks
+                            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                            // @ts-ignore
+                            callback: function (value, index, values) {
+                                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                // @ts-ignore
+                                return '$' + number_format(value);
+                            }
+                        },
+                        gridLines: {
+                            color: "rgb(234, 236, 244)",
+                            zeroLineColor: "rgb(234, 236, 244)",
+                            drawBorder: false,
+                            borderDash: [2],
+                            zeroLineBorderDash: [2]
+                        }
+                    }],
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    titleMarginBottom: 10,
+                    titleFontColor: '#6e707e',
+                    titleFontSize: 14,
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    intersect: false,
+                    mode: 'index',
+                    caretPadding: 10,
+                    callbacks: {
+                        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                        // @ts-ignore
+                        label: function (tooltipItem, chart) {
+                            var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                            // @ts-ignore
+                            return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+                        }
+                    }
+                }
+            }
+        });
+
     }, [])
 
     return (
@@ -266,38 +428,38 @@ export function Dashboard(props: any) {
                                     </h6>
                                     <a className="dropdown-item d-flex align-items-center" href="#">
                                         <div className="dropdown-list-image mr-3">
-                                            <img className="rounded-circle" src="img/undraw_profile_1.svg"
+                                            <img className="rounded-circle" src={logo}
                                                 alt="..." />
                                             <div className="status-indicator bg-success"></div>
                                         </div>
                                         <div className="font-weight-bold">
                                             <div className="text-truncate">Hi there! I am wondering if you can help me with a
                                                 problem I've been having.</div>
-                                            <div className="small text-gray-500">Emily Fowler · 58m</div>
+                                            <div className="small text-gray-500">uflu.shop · 58m</div>
                                         </div>
                                     </a>
                                     <a className="dropdown-item d-flex align-items-center" href="#">
                                         <div className="dropdown-list-image mr-3">
-                                            <img className="rounded-circle" src="img/undraw_profile_2.svg"
+                                            <img className="rounded-circle" src={logo}
                                                 alt="..." />
                                             <div className="status-indicator"></div>
                                         </div>
                                         <div>
                                             <div className="text-truncate">I have the photos that you ordered last month, how
                                                 would you like them sent to you?</div>
-                                            <div className="small text-gray-500">Jae Chun · 1d</div>
+                                            <div className="small text-gray-500">uflu.shop · 1d</div>
                                         </div>
                                     </a>
                                     <a className="dropdown-item d-flex align-items-center" href="#">
                                         <div className="dropdown-list-image mr-3">
-                                            <img className="rounded-circle" src="img/undraw_profile_3.svg"
+                                            <img className="rounded-circle" src={logo}
                                                 alt="..." />
                                             <div className="status-indicator bg-warning"></div>
                                         </div>
                                         <div>
                                             <div className="text-truncate">Last month's report looks great, I am very happy with
                                                 the progress so far, keep up the good work!</div>
-                                            <div className="small text-gray-500">Morgan Alvarez · 2d</div>
+                                            <div className="small text-gray-500">uflu.shop · 2d</div>
                                         </div>
                                     </a>
                                     <a className="dropdown-item d-flex align-items-center" href="#">
@@ -309,7 +471,7 @@ export function Dashboard(props: any) {
                                         <div>
                                             <div className="text-truncate">Am I a good boy? The reason I ask is because someone
                                                 told me that people say this to all dogs, even if they aren't good...</div>
-                                            <div className="small text-gray-500">Chicken the Dog · 2w</div>
+                                            <div className="small text-gray-500">Customer Dog · 2w</div>
                                         </div>
                                     </a>
                                     <a className="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
