@@ -1,96 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
 
-        <link rel="icon" type="image/svg+xml" href="/letter.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="description" content="Social Media eCommerce" />
-        <link rel="apple-touch-icon" href="/letter.svg" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta property="og:title" content="uflu">
-        <meta property="og:site_name" content="uflu.shop">
-        <meta property="og:url" content="https://uflu.shop">
-        <meta property="og:description" content="One-click-to Social Media eCommerce">
-        <meta property="og:type" content="website">
-        <meta property="og:image" content="https://uflu.shop/icon-512x512.png">
-        <!-- Custom fonts for this template-->
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/letter.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Social Media eCommerce" />
+    <link rel="apple-touch-icon" href="/letter.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta property="og:title" content="uflu">
+    <meta property="og:site_name" content="uflu.shop">
+    <meta property="og:url" content="https://uflu.shop">
+    <meta property="og:description" content="One-click-to Social Media eCommerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://uflu.shop/icon-512x512.png">
+    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('serviceWorker.js')
+                .then(function (registration) {
+                    // Registration was successful
+                    console.log(
+                        'ServiceWorker registration successful with scope: ',
+                        registration.scope
+                    )
+                })
+                .catch(function (err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err)
+                })
+        }
+        Object.defineProperty(String.prototype, 'capitalize', {
+            value: function () {
+                return this.charAt(0).toUpperCase() + this.slice(1)
+            },
+            enumerable: false,
+        })
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet">
-        <script>
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker
-                    .register('serviceWorker.js')
-                    .then(function (registration) {
-                        // Registration was successful
-                        console.log(
-                            'ServiceWorker registration successful with scope: ',
-                            registration.scope
-                        )
-                    })
-                    .catch(function (err) {
-                        // registration failed :(
-                        console.log('ServiceWorker registration failed: ', err)
-                    })
-            }
-            Object.defineProperty(String.prototype, 'capitalize', {
-                value: function () {
-                    return this.charAt(0).toUpperCase() + this.slice(1)
-                },
-                enumerable: false,
-            })
-
-            Object.defineProperty(Array.prototype, 'range', {
-                configurable: true,
-                value: function (a, b, step) {
-                    step = !step ? 1 : step
-                    b = b / step
-                    for (var i = a; i <= b; i++) {
-                        this.push(i * step)
-                    }
-                    return this
-                },
-            })
-            Object.defineProperty(Date.prototype, 'format', {
-                configurable: true,
-                value: function (a, b, step) {
-                    step = !step ? 1 : step
-                    b = b / step
-                    for (var i = a; i <= b; i++) {
-                        this.push(i * step)
-                    }
-                    return this
-                },
-            })
-            Array.range = function (a, b, step) {
+        Object.defineProperty(Array.prototype, 'range', {
+            configurable: true,
+            value: function (a, b, step) {
                 step = !step ? 1 : step
                 b = b / step
                 for (var i = a; i <= b; i++) {
                     this.push(i * step)
                 }
                 return this
+            },
+        })
+        Object.defineProperty(Date.prototype, 'format', {
+            configurable: true,
+            value: function (a, b, step) {
+                step = !step ? 1 : step
+                b = b / step
+                for (var i = a; i <= b; i++) {
+                    this.push(i * step)
+                }
+                return this
+            },
+        })
+        Array.range = function (a, b, step) {
+            step = !step ? 1 : step
+            b = b / step
+            for (var i = a; i <= b; i++) {
+                this.push(i * step)
             }
-        </script>
-        <!-- <script src="https://gist.github.com/dariob/5537217.js"></script> -->
+            return this
+        }
+    </script>
+    <!-- <script src="https://gist.github.com/dariob/5537217.js"></script> -->
 
-        <title>UFLU</title>
-    </head>
+    <title>UFLU</title>
+    <script src="//code.jivosite.com/widget/Y2ac0AJG2u" async></script>
+</head>
 
-    <body>
-        <div id="root"></div>
-        <script type="module" src="/src/main.tsx"></script>
-            <!-- Bootstrap core JavaScript-->
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- Bootstrap core JavaScript-->
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -102,5 +99,6 @@
 
     <!-- Page level plugins -->
     <script src="/vendor/chart.js/Chart.min.js"></script>
-    </body>
+</body>
+
 </html>

@@ -60,13 +60,7 @@ const router = (user: string) => {
         {
             path: '/',
             element: <Landing />,
-            errorElement: <ErrorPage />,
-            // children: [
-            //     {
-            //         path: '',
-            //         element: <Landing />,
-            //     },
-            // ],
+            errorElement: <ErrorPage />
         },
     ])
 }

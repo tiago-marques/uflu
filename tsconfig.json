@@ -5,21 +5,48 @@
         "module": "ESNext",
         "skipLibCheck": true,
         "moduleResolution": "Node",
-        "lib": ["ESNext", "ESNext.AsyncIterable", "DOM", "DOM.Iterable"],
+        "lib": [
+            "ESNext",
+            "ESNext.AsyncIterable",
+            "DOM",
+            "DOM.Iterable"
+        ],
         "esModuleInterop": true,
         "allowJs": true,
         "sourceMap": true,
         "strict": true,
         "noEmit": true,
         "experimentalDecorators": true,
-        "baseUrl": ".",
+        "baseUrl": "./src", // This is to avoid adding the ./src prefix to each path below.
         "paths": {
-            "~/*": ["./*"],
-            "@/*": ["./*"]
+            "@features/*": [
+                "features/*"
+            ],
+            "@hooks/*": [
+                "hooks/*"
+            ],
+            "@assets/*": [
+                "assets/*"
+            ],
+            "@routes/*": [
+                "routes/*"
+            ]
         },
-        "types": ["@types/node"]
+        "types": [
+            "@types/node"
+        ]
     },
-    "exclude": ["node_modules", ".nuxt", "dist"],
-    "include": ["src"],
-    "references": [{ "path": "./tsconfig.node.json" }]
+    "exclude": [
+        "node_modules",
+        ".nuxt",
+        "dist"
+    ],
+    "include": [
+        "src"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ]
 }
